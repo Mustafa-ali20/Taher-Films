@@ -1,0 +1,118 @@
+// ============================================
+// BREAKPOINTS & MIXINS
+// ============================================
+
+$mobile-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 1023px;
+$laptop-min: 1024px;
+
+@mixin mobile {
+  @media (max-width: $mobile-max) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: $laptop-min) {
+    @content;
+  }
+}
+
+// ============================================
+// VIDEO PLAYER COMPONENT
+// ============================================
+
+.video-player__backdrop {
+  position: fixed;
+  height: 100vh;
+  top: -10rem;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+}
+
+.video-player__container {
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  background-color: black;
+}
+
+// ============================================
+// PLAY OVERLAY (Large screens only)
+// ============================================
+
+.video-player__play-overlay {
+  position: absolute;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.video-player__play-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 9999px;
+  width: 6vh;
+  height: 6vh;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(24px);
+}
+
+.video-player__play-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: white;
+}
+
+// ============================================
+// VIDEO ELEMENT
+// ============================================
+
+.video-player__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// ============================================
+// CLOSE BUTTON
+// ============================================
+
+.video-player__close-button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 30;
+  cursor: pointer;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.video-player__close-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+  transform: rotate(45deg);
+}

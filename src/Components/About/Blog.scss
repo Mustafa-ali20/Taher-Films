@@ -1,0 +1,442 @@
+// ============================================
+// Variables
+// ============================================
+$color-white: #ffffff;
+$color-black: #000000;
+$color-zinc: #71717a;
+$color-dark-bg: #1a1a1a;
+$color-border-gray: rgba(156, 163, 175, 0.4);
+
+$border-radius-lg: 1.5rem;
+$border-radius-full: 9999px;
+
+$transition-standard: all 0.3s ease;
+$transition-slow: all 0.5s ease-out;
+
+// Breakpoints
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-laptop: 1280px;
+$breakpoint-xl: 1441px;
+
+// New breakpoints matching projects display
+$mobile-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 1023px;
+$laptop-min: 1024px;
+$laptop-max: 1599px;
+$monitor-min: 1600px;
+
+// ============================================
+// Mixins
+// ============================================
+@mixin respond-to($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile-max) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: $laptop-min) and (max-width: $laptop-max) {
+    @content;
+  }
+}
+
+@mixin monitor {
+  @media (min-width: $monitor-min) {
+    @content;
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  aspect-ratio: $width / $height;
+}
+
+@mixin glassmorphism($blur: 10px, $opacity: 0.05) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+// ============================================
+// Keyframes
+// ============================================
+@keyframes float1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -15px);
+  }
+}
+
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-25px, 20px);
+  }
+}
+
+@keyframes float3 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(15px, 15px);
+  }
+}
+
+// ============================================
+// Main Component
+// ============================================
+.blog-page {
+  min-height: 100vh;
+  width: 100%;
+  
+  // Mobile (default)
+  padding: 5rem 2.5rem;
+
+  @include tablet {
+    padding: 5rem 5rem;
+  }
+
+  @include laptop {
+    padding: 10rem 7.5rem 8rem;
+    
+    // For smaller height screens, increase top padding
+    @media (max-height: 768px) {
+      padding-top: 35rem;
+    }
+  }
+
+  @include monitor {
+    padding: 14.5rem 7.5rem 12rem;
+  }
+
+  // ============================================
+  // Heading
+  // ============================================
+  &__heading {
+    font-size: 2.25rem;
+    color: $color-white;
+    text-align: center;
+    margin-bottom: 4rem;
+    overflow: hidden;
+
+    @include respond-to($breakpoint-md) {
+      font-size: 3rem;
+    }
+
+    @include respond-to($breakpoint-lg) {
+      font-size: 3.75rem;
+      margin-bottom: 5rem;
+    }
+
+    @include respond-to($breakpoint-laptop) {
+      font-size: 4rem;
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__heading-villo {
+    font-family: "villo", sans-serif;
+    line-height: 1.2;
+  }
+
+  &__heading-apple {
+    font-family: "apple", sans-serif;
+  }
+
+  // ============================================
+  // Grid
+  // ============================================
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    margin-bottom: 4rem;
+
+    @include respond-to($breakpoint-md) {
+      gap: 2rem;
+    }
+
+    @include respond-to($breakpoint-lg) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 6.5rem;
+    }
+
+    @include respond-to($breakpoint-laptop) {
+      gap: 1.5rem;
+      margin-bottom: 7rem;
+    }
+  }
+
+  // ============================================
+  // Card
+  // ============================================
+  &__card {
+    background-color: $color-zinc;
+    border-radius: $border-radius-lg;
+    transition: $transition-slow;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    // Mobile
+    height: 30vh;
+    width: 40vw;
+    margin-bottom: 2.5rem;
+
+    // Tablet
+    @include respond-to($breakpoint-md) {
+      height: 40vh;
+      width: 40vw;
+    }
+
+    // Large screens (laptops and above) - 9:16 aspect ratio, smaller size
+    @include respond-to($breakpoint-lg) {
+      height: auto;
+      width: 100%;
+      max-width: 300px;
+      @include aspect-ratio(9, 16);
+    }
+
+    @include respond-to($breakpoint-laptop) {
+      max-width: 300px;
+    }
+
+    @include respond-to($breakpoint-xl) {
+      max-width: 320px;
+    }
+  }
+
+  &__card-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $border-radius-lg;
+  }
+
+  &__card-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: $border-radius-lg;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  // ============================================
+  // Audio Indicator (Mobile/Tablet only)
+  // ============================================
+  &__audio-indicator {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    border-radius: $border-radius-full;
+    padding: 0.5rem;
+    transition: $transition-standard;
+    z-index: 10;
+
+    &--unmuted {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    @include respond-to($breakpoint-lg) {
+      display: none;
+    }
+  }
+
+  &__audio-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: $color-white;
+  }
+
+  // ============================================
+  // Button Container
+  // ============================================
+  &__button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  // ============================================
+  // Button
+  // ============================================
+  &__button {
+    position: relative;
+    background-color: $color-dark-bg;
+    color: $color-white;
+    padding: 0.75rem 1.5rem;
+    border-radius: $border-radius-full;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: $transition-standard;
+    border-top: 1px solid $color-border-gray;
+    border-left: 1px solid $color-border-gray;
+    border-right: 1px solid $color-border-gray;
+    border-bottom: none;
+    overflow: hidden;
+    cursor: pointer;
+
+    @include respond-to($breakpoint-md) {
+      padding: 1rem 2.5rem;
+      gap: 1rem;
+    }
+
+    @include respond-to($breakpoint-lg) {
+      padding: 0.75rem 2rem;
+      gap: 0.75rem;
+    }
+  }
+
+  &__button-bg {
+    position: absolute;
+    inset: 0;
+    border-radius: $border-radius-full;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &__button-glass {
+    position: absolute;
+    inset: 0;
+    border-radius: $border-radius-full;
+    @include glassmorphism(10px, 0.05);
+    z-index: 1;
+  }
+
+  &__button-orbs {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: $border-radius-full;
+    z-index: 0;
+  }
+
+  &__button-orb {
+    position: absolute;
+    border-radius: $border-radius-full;
+
+    &--1 {
+      width: 6rem;
+      height: 6rem;
+      background: radial-gradient(
+        circle,
+        rgba(255, 85, 174, 0.9) 0%,
+        rgba(255, 85, 174, 0) 70%
+      );
+      filter: blur(20px);
+      top: 20%;
+      left: 10%;
+      animation: float1 8s ease-in-out infinite;
+    }
+
+    &--2 {
+      width: 7rem;
+      height: 7rem;
+      background: radial-gradient(
+        circle,
+        rgba(255, 50, 50, 0.85) 0%,
+        rgba(255, 50, 50, 0) 70%
+      );
+      filter: blur(25px);
+      top: 40%;
+      right: 15%;
+      animation: float2 10s ease-in-out infinite;
+    }
+
+    &--3 {
+      width: 5rem;
+      height: 5rem;
+      background: radial-gradient(
+        circle,
+        rgba(200, 0, 60, 0.85) 0%,
+        rgba(200, 0, 60, 0) 70%
+      );
+      filter: blur(18px);
+      bottom: 25%;
+      left: 40%;
+      animation: float3 9s ease-in-out infinite;
+    }
+  }
+
+  &__button-icon-wrapper {
+    background-color: $color-white;
+    border-radius: $border-radius-full;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 10;
+
+    @include respond-to($breakpoint-md) {
+      padding: 0.25rem;
+    }
+
+    .blog-page__button:hover & {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__button-icon {
+    width: 1rem;
+    height: 1rem;
+    color: $color-black;
+
+    @include respond-to($breakpoint-md) {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  &__button-text {
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    position: relative;
+    font-family: "villo", sans-serif;
+    z-index: 10;
+
+    @include respond-to($breakpoint-md) {
+      font-size: 1.125rem;
+    }
+
+    @include respond-to($breakpoint-lg) {
+      font-size: 1.125rem;
+    }
+  }
+}

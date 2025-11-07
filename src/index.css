@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: nf;
+  src: url(/fonts/NeutralFace.ttf);
+}
+
+@font-face {
+  font-family: nfb;
+  src: url(/fonts/NeutralFace-Bold.ttf);
+}
+
+@font-face {
+  font-family: inter;
+  src: url(/fonts/Inter.ttc);
+}
+
+@font-face {
+  font-family: inter-b;
+  src: url(/fonts/ttf/Inter-Bold.ttf);
+}
+
+@font-face {
+  font-family: apple;
+  src: url(/fonts/AppleGaramond-Italic.ttf);
+}
+
+@font-face {
+  font-family: apple-lg;
+  src: url(/fonts/AppleGaramond-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: apple-l;
+  src: url(/fonts/AppleGaramond-Light.ttf);
+}
+
+@font-face {
+  font-family: apple-b;
+  src: url(/fonts/AppleGaramond-Bold.ttf);
+}
+
+@font-face {
+  font-family: villo;
+  src: url(/fonts/villo.ttf);
+}
+
+@font-face {
+  font-family: villo2;
+  src: url(/fonts/villo2.ttf);
+}
+
+@font-face {
+  font-family: villo3;
+  src: url(/fonts/villo3.ttf);
+}
+
+/* bg-[#fdf9ee] */
+
+body::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Navbar Container */
+.navbar-container {
+  position: relative;
+}
+
+/* Glass Navbar Base Styles */
+.glass-navbar {
+  position: relative;
+  background: rgba(30, 26, 20, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Top Gradient Border Effect */
+.glass-navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  border-radius: 9999px 9999px 0 0;
+  padding: 1px 1px 0 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Inner Glow Effect */
+.glass-navbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  border-radius: 9999px 9999px 0 0;
+  pointer-events: none;
+  filter: blur(8px);
+}
+
+::selection {
+  background-color: #f1f1f1; /* your highlight color */
+  color: #1a1a1a;           /* text color while selected */
+}
+
+/* === Floating orb animations for the FeaturedWork button === */
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  33% { transform: translate(50%, 30%) scale(1.2); }
+  66% { transform: translate(-30%, 50%) scale(0.9); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  33% { transform: translate(-40%, -20%) scale(1.1); }
+  66% { transform: translate(40%, 40%) scale(0.95); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  33% { transform: translate(20%, -40%) scale(1.15); }
+  66% { transform: translate(-50%, 20%) scale(0.85); }
+}
+
+
+/* Word Animation Styles */
+.words {
+  overflow: hidden;
+  position: relative;
+  height: 1.5em; /* default for small screens */
+}
+
+@media (min-width: 768px) {
+  .words {
+    height: 1.3em; /* for medium and large screens */
+  }
+}
+
+.words::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    #000000 10%,
+    transparent 10%,
+    transparent 90%,
+    #000000 100%
+  );
+  z-index: 20;
+  pointer-events: none;
+}
+
+.word {
+  display: block;
+  height: 100%;
+  padding-left: 6px;
+  color: #fff;
+  font-family: villo, sans-serif;
+  animation: spin_words 9s infinite;
+}
+
+@keyframes spin_words {
+  0% {
+    transform: translateY(0%);
+  }
+  25% {
+    transform: translateY(0%);
+  }
+  33% {
+    transform: translateY(-100%);
+  }
+  58% {
+    transform: translateY(-100%);
+  }
+  66% {
+    transform: translateY(-200%);
+  }
+  91% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(-300%);
+  }
+}
+

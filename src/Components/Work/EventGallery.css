@@ -1,0 +1,268 @@
+@import url("https://fonts.cdnfonts.com/css/villo");
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.event-gallery {
+  width: 100%;
+  padding: 60px 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.event-gallery .heading-container {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 20px;
+}
+.event-gallery .heading-container .heading-event {
+  font-family: "villo";
+  font-size: clamp(48px, 8vw, 66px);
+  color: #fff;
+  margin: 0;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+.event-gallery .heading-container .heading-gallery {
+  font-family: "apple";
+  font-size: clamp(48px, 8vw, 66px);
+  color: #fff;
+  margin: 0;
+  letter-spacing: 2px;
+}
+.event-gallery .videos-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.video-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+.video-container .marquee-background {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+.video-container .marquee-track {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 30px 0;
+  display: flex;
+}
+.video-container .marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 100%;
+}
+.video-container .marquee-left .marquee-content {
+  animation: marqueeLeft 40s linear infinite;
+}
+.video-container .marquee-right .marquee-content {
+  animation: marqueeRight 40s linear infinite;
+}
+.video-container .marquee-text {
+  display: inline-block;
+  padding-right: 100px;
+  font-size: clamp(64px, 10vw, 120px);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.301);
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-family: "villo";
+  flex-shrink: 0;
+}
+.video-container .video-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 90%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  background: #000;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+.video-container .video-wrapper:hover .video-controls {
+  opacity: 1;
+}
+.video-container .video-wrapper .video-element {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.video-container .video-wrapper .video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.video-container .video-wrapper .video-controls .control-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #000;
+  flex-shrink: 0;
+}
+.video-container .video-wrapper .video-controls .control-btn:hover {
+  background: #fff;
+  transform: scale(1.1);
+}
+.video-container .video-wrapper .video-controls .control-btn:active {
+  transform: scale(0.95);
+}
+.video-container .video-wrapper .video-controls .progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.video-container .video-wrapper .video-controls .progress-bar:hover {
+  height: 8px;
+}
+.video-container .video-wrapper .video-controls .progress-bar:hover .progress-fill {
+  background: #fff;
+}
+.video-container .video-wrapper .video-controls .progress-bar .progress-fill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+  transition: width 0.1s linear, background 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+  .event-gallery {
+    padding: 40px 0;
+  }
+  .event-gallery .heading-container {
+    margin-bottom: 60px;
+    gap: 16px;
+  }
+  .event-gallery .videos-section {
+    gap: 100px;
+  }
+  .video-container {
+    min-height: 400px;
+  }
+  .video-container .marquee-track {
+    padding: 24px 0;
+  }
+  .video-container .marquee-text {
+    padding-right: 80px;
+    font-size: clamp(56px, 9vw, 100px);
+  }
+  .video-container .video-wrapper {
+    width: 85%;
+    max-width: 700px;
+  }
+  .video-container .video-wrapper .video-controls {
+    padding: 16px;
+    gap: 12px;
+    opacity: 1;
+  }
+  .video-container .video-wrapper .video-controls .control-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 640px) {
+  .event-gallery {
+    padding: 30px 0;
+  }
+  .event-gallery .heading-container {
+    margin-bottom: 40px;
+    gap: 12px;
+  }
+  .event-gallery .videos-section {
+    gap: 80px;
+  }
+  .video-container {
+    min-height: 300px;
+  }
+  .video-container .marquee-track {
+    padding: 20px 0;
+  }
+  .video-container .marquee-text {
+    padding-right: 60px;
+    font-size: clamp(48px, 12vw, 80px);
+    letter-spacing: 4px;
+  }
+  .video-container .marquee-left .marquee-content {
+    animation: marqueeLeft 30s linear infinite;
+  }
+  .video-container .marquee-right .marquee-content {
+    animation: marqueeRight 30s linear infinite;
+  }
+  .video-container .video-wrapper {
+    width: 90%;
+    max-width: 500px;
+  }
+  .video-container .video-wrapper .video-controls {
+    padding: 12px;
+    gap: 10px;
+    opacity: 1;
+  }
+  .video-container .video-wrapper .video-controls .control-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .video-container .video-wrapper .video-controls .control-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  .video-container .video-wrapper .video-controls .progress-bar {
+    height: 4px;
+  }
+}/*# sourceMappingURL=EventGallery.css.map */

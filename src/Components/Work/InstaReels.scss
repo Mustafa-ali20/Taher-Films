@@ -1,0 +1,336 @@
+// ============================================
+// VARIABLES
+// ============================================
+$color-white: #fff;
+
+// Breakpoints
+$breakpoint-mobile-max: 767px;
+$breakpoint-tablet-min: 768px;
+$breakpoint-tablet-max: 1023px;
+$breakpoint-laptop-min: 1024px;
+$breakpoint-laptop-max: 1599px;
+$breakpoint-monitor-min: 1600px;
+
+// Spacing
+$spacing-mobile: 1rem;
+$spacing-tablet: 2.5rem;
+$spacing-laptop: 4rem;
+$spacing-monitor: 7.5rem;
+
+// Grid gaps
+$gap-mobile: 0.75rem;
+$gap-tablet: 1rem;
+$gap-laptop: 1.25rem;
+$gap-monitor: 1.5rem;
+
+// Container max widths
+$max-width-tablet: 80rem;
+$max-width-laptop: 90rem;
+$max-width-monitor: 120rem;
+
+// ============================================
+// MIXINS
+// ============================================
+
+// Responsive breakpoints mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $breakpoint-mobile-max) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
+      @content;
+    }
+  } @else if $breakpoint == laptop {
+    @media (min-width: $breakpoint-laptop-min) and (max-width: $breakpoint-laptop-max) {
+      @content;
+    }
+  } @else if $breakpoint == monitor {
+    @media (min-width: $breakpoint-monitor-min) {
+      @content;
+    }
+  }
+}
+
+// Grid layout mixin
+@mixin grid-layout($columns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+  align-items: center;
+}
+
+// ============================================
+// BASE STYLES
+// ============================================
+.insta-reels {
+  min-height: 100vh;
+
+  &__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__header {
+    text-align: center;
+
+    h1 {
+      color: $color-white;
+      font-family: 'villo', sans-serif;
+
+      span {
+        font-family: 'apple', sans-serif;
+      }
+    }
+  }
+
+  &__grid {
+    @include grid-layout(5, $gap-monitor);
+  }
+
+  // ============================================
+  // MOBILE STYLES (up to 767px)
+  // ============================================
+  @include respond-to(mobile) {
+    padding: 2rem $spacing-mobile;
+
+    &__header {
+      margin-bottom: 2.5rem;
+      margin-top: 0.25rem;
+
+      h1 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    }
+
+    &__container {
+      max-width: $max-width-tablet;
+      gap: 1.5rem;
+    }
+
+    &__grid {
+      @include grid-layout(2, $gap-mobile);
+    }
+  }
+
+  // ============================================
+  // TABLET STYLES (768px - 1023px)
+  // ============================================
+  @include respond-to(tablet) {
+    padding: 3rem $spacing-tablet;
+
+    &__header {
+      margin-bottom: 3.75rem;
+      margin-top: 1.25rem;
+
+      h1 {
+        font-size: 3rem;
+        line-height: 1;
+      }
+    }
+
+    &__container {
+      max-width: $max-width-tablet;
+      gap: 2rem;
+    }
+
+    &__grid {
+      @include grid-layout(3, $gap-tablet);
+    }
+  }
+
+  // ============================================
+  // LAPTOP STYLES (1024px - 1599px) - FIXED
+  // ============================================
+  @include respond-to(laptop) {
+    padding: 4rem $spacing-laptop;
+
+    &__header {
+      margin-bottom: 3.75rem;
+      margin-top: 1.25rem;
+
+      h1 {
+        font-size: 3.5rem;
+        line-height: 1;
+      }
+    }
+
+    &__container {
+      max-width: $max-width-laptop;
+      gap: 2rem;
+    }
+
+    &__grid {
+      @include grid-layout(5, $gap-laptop);
+      
+      // Fix for proper spacing and alignment
+      &--layer-1,
+      &--layer-3 {
+        // Ellipse at end - no special handling needed
+        grid-template-columns: repeat(4, 1fr) 0.85fr;
+      }
+
+      &--layer-2 {
+        // Ellipse at start - ensure proper spacing
+        grid-template-columns: 0.85fr repeat(4, 1fr);
+      }
+    }
+  }
+
+  // ============================================
+  // MONITOR STYLES (1600px+)
+  // ============================================
+  @include respond-to(monitor) {
+    padding: 4rem $spacing-monitor;
+
+    &__header {
+      margin-bottom: 3.75rem;
+      margin-top: 1.25rem;
+
+      h1 {
+        font-size: 3.75rem;
+        line-height: 1;
+      }
+    }
+
+    &__container {
+      max-width: $max-width-monitor;
+      gap: 2rem;
+    }
+
+    &__grid {
+      @include grid-layout(5, $gap-monitor);
+    }
+  }
+}
+
+// ============================================
+// ELLIPSE COMPONENT STYLES
+// ============================================
+.empty-ellipse {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__container {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 5px solid rgba(255, 100, 100, 0.5);
+    box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.1), 
+                0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  &__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    z-index: 10;
+  }
+
+  &__category {
+    color: #d1d5db;
+    font-weight: 700;
+    text-transform: capitalize;
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    text-align: center;
+    font-family: 'apple', sans-serif;
+  }
+
+  &__caption {
+    color: #d1d5db;
+    font-weight: 500;
+    text-transform: capitalize;
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    text-align: center;
+    font-family: 'villo', sans-serif;
+  }
+
+  // ============================================
+  // RESPONSIVE ELLIPSE SIZES
+  // ============================================
+  @include respond-to(mobile) {
+    &__container {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    &__category {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    &__caption {
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+  }
+
+  @include respond-to(tablet) {
+    &__container {
+      width: 14rem;
+      height: 14rem;
+    }
+
+    &__category {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+
+    &__caption {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  @include respond-to(laptop) {
+    &__container {
+      width: 16rem;
+      height: 16rem;
+      // Ensure ellipse maintains its space
+      flex-shrink: 0;
+    }
+
+    &__category {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+
+    &__caption {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  @include respond-to(monitor) {
+    &__container {
+      width: 19.5rem;
+      height: 19.5rem;
+    }
+
+    &__category {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    &__caption {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
+}

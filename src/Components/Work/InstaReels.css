@@ -1,0 +1,224 @@
+.insta-reels {
+  min-height: 100vh;
+}
+.insta-reels__container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.insta-reels__header {
+  text-align: center;
+}
+.insta-reels__header h1 {
+  color: #fff;
+  font-family: "villo", sans-serif;
+}
+.insta-reels__header h1 span {
+  font-family: "apple", sans-serif;
+}
+.insta-reels__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .insta-reels {
+    padding: 2rem 1rem;
+  }
+  .insta-reels__header {
+    margin-bottom: 2.5rem;
+    margin-top: 0.25rem;
+  }
+  .insta-reels__header h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  .insta-reels__container {
+    max-width: 80rem;
+    gap: 1.5rem;
+  }
+  .insta-reels__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .insta-reels {
+    padding: 3rem 2.5rem;
+  }
+  .insta-reels__header {
+    margin-bottom: 3.75rem;
+    margin-top: 1.25rem;
+  }
+  .insta-reels__header h1 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .insta-reels__container {
+    max-width: 80rem;
+    gap: 2rem;
+  }
+  .insta-reels__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: center;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1599px) {
+  .insta-reels {
+    padding: 4rem 4rem;
+  }
+  .insta-reels__header {
+    margin-bottom: 3.75rem;
+    margin-top: 1.25rem;
+  }
+  .insta-reels__header h1 {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+  .insta-reels__container {
+    max-width: 90rem;
+    gap: 2rem;
+  }
+  .insta-reels__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+    align-items: center;
+  }
+  .insta-reels__grid--layer-1, .insta-reels__grid--layer-3 {
+    grid-template-columns: repeat(4, 1fr) 0.85fr;
+  }
+  .insta-reels__grid--layer-2 {
+    grid-template-columns: 0.85fr repeat(4, 1fr);
+  }
+}
+@media (min-width: 1600px) {
+  .insta-reels {
+    padding: 4rem 7.5rem;
+  }
+  .insta-reels__header {
+    margin-bottom: 3.75rem;
+    margin-top: 1.25rem;
+  }
+  .insta-reels__header h1 {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+  .insta-reels__container {
+    max-width: 120rem;
+    gap: 2rem;
+  }
+  .insta-reels__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    align-items: center;
+  }
+}
+
+.empty-ellipse__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.empty-ellipse__container {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 5px solid rgba(255, 100, 100, 0.5);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+.empty-ellipse__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  z-index: 10;
+}
+.empty-ellipse__category {
+  color: #d1d5db;
+  font-weight: 700;
+  text-transform: capitalize;
+  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+  text-align: center;
+  font-family: "apple", sans-serif;
+}
+.empty-ellipse__caption {
+  color: #d1d5db;
+  font-weight: 500;
+  text-transform: capitalize;
+  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+  text-align: center;
+  font-family: "villo", sans-serif;
+}
+@media (max-width: 767px) {
+  .empty-ellipse__container {
+    width: 10rem;
+    height: 10rem;
+  }
+  .empty-ellipse__category {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .empty-ellipse__caption {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .empty-ellipse__container {
+    width: 14rem;
+    height: 14rem;
+  }
+  .empty-ellipse__category {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .empty-ellipse__caption {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1599px) {
+  .empty-ellipse__container {
+    width: 16rem;
+    height: 16rem;
+    flex-shrink: 0;
+  }
+  .empty-ellipse__category {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+  .empty-ellipse__caption {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+@media (min-width: 1600px) {
+  .empty-ellipse__container {
+    width: 19.5rem;
+    height: 19.5rem;
+  }
+  .empty-ellipse__category {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .empty-ellipse__caption {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}/*# sourceMappingURL=InstaReels.css.map */

@@ -161,7 +161,7 @@ function Name() {
           </p>
 
           <div className="relative w-full">
-            <VideoPlayer videoSrc="/videos/blog/taherfilms.mp4" />
+            <VideoPlayer videoSrc="/videos/blog/introvid.mp4" />
             <h1 className="text-[28vw] sm:text-[16vw] md:text-[34vw] font-[villo3] leading-[0.9] tracking-tight text-center w-full select-none">
               <span ref={taherRef}>TAHER</span>
               <br />
@@ -192,7 +192,7 @@ function Name() {
               style={{ x, y }}
               className="absolute inset-0 pointer-events-none will-change-transform z-1"
             >
-              <VideoPlayer videoSrc="/videos/blog/taherfilms.mp4" />
+              <VideoPlayer videoSrc="/videos/blog/introvid.mp4" />
             </motion.div>
 
             <h1 className="text-[15vw] font-[villo3] leading-[0.9] tracking-tight text-center select-none">

@@ -2,7 +2,7 @@ import React from "react";
 import WorkParallax from "../Components/Work";
 import InstaReels from "../Components/Work/InstaReels";
 import ContentMarketing from "../Components/Work/ContentMarketing";
-import EventGallery from "../Components/Work/event";
+import EventGallery from "../Components/Work/Event";
 
 function Work() {
   return (

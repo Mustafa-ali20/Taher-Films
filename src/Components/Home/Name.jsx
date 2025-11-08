@@ -172,7 +172,7 @@ function Name() {
           </div>
 
           <p className="text-center font-[villo] md:w-3/4 mx-auto mt-20 md:text-xl text-zinc-200 md:leading-10">
-            I'm Taher Husain — a filmmaker and creative director based in
+            I'm Taher Husain — a content marketer and filmmaker based in
             Kuwait, shaping brands through cinematic content and visual
             storytelling for over 5 years.
           </p>

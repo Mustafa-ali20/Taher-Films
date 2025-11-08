@@ -6,6 +6,7 @@ import { BiLogoGmail } from "react-icons/bi";
 import { IoMailOutline } from "react-icons/io5";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +18,8 @@ const AnimatedGradientOrbs = () => {
       id: 1,
       sizeClasses: "w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px]",
       color: "from-[#C1121F] to-[#72121B]",
-      positionClasses: "-top-32 -left-32 md:-top-40 md:-left-40 lg:-top-48 lg:-left-48",
+      positionClasses:
+        "-top-32 -left-32 md:-top-40 md:-left-40 lg:-top-48 lg:-left-48",
       initial: { x: 0, y: 0, opacity: 0.25 },
       animate: {
         x: [0, 120, -80, 100, 0],
@@ -32,7 +34,8 @@ const AnimatedGradientOrbs = () => {
       id: 2,
       sizeClasses: "w-72 h-72 md:w-96 md:h-96 lg:w-[550px] lg:h-[550px]",
       color: "from-[#ff1f5a] to-[#C1121F]",
-      positionClasses: "-top-24 -right-24 md:-top-32 md:-right-32 lg:-top-40 lg:-right-40",
+      positionClasses:
+        "-top-24 -right-24 md:-top-32 md:-right-32 lg:-top-40 lg:-right-40",
       initial: { x: 0, y: 0, opacity: 0.22 },
       animate: {
         x: [0, -140, 90, -120, 0],
@@ -47,7 +50,8 @@ const AnimatedGradientOrbs = () => {
       id: 3,
       sizeClasses: "w-80 h-80 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px]",
       color: "from-[#AA1A21] to-[#ff1f5a]",
-      positionClasses: "-bottom-32 -left-40 md:-bottom-40 md:-left-48 lg:-bottom-48 lg:-left-56",
+      positionClasses:
+        "-bottom-32 -left-40 md:-bottom-40 md:-left-48 lg:-bottom-48 lg:-left-56",
       initial: { x: 0, y: 0, opacity: 0.23 },
       animate: {
         x: [0, 110, -100, 90, 0],
@@ -62,7 +66,8 @@ const AnimatedGradientOrbs = () => {
       id: 4,
       sizeClasses: "w-72 h-72 md:w-80 md:h-80 lg:w-[480px] lg:h-[480px]",
       color: "from-[#72121B] to-[#AA1A21]",
-      positionClasses: "-bottom-24 -right-32 md:-bottom-32 md:-right-40 lg:-bottom-40 lg:-right-48",
+      positionClasses:
+        "-bottom-24 -right-32 md:-bottom-32 md:-right-40 lg:-bottom-40 lg:-right-48",
       initial: { x: 0, y: 0, opacity: 0.2 },
       animate: {
         x: [0, -130, 100, -110, 0],
@@ -130,9 +135,9 @@ const MagneticEffect = ({ children }) => {
 const emailAddress = "taherfilmss@gmail.com";
 
 const handleGmailClick = () => {
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
-    window.open(gmailUrl, "_blank");
-  };
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
+  window.open(gmailUrl, "_blank");
+};
 
 function Footer() {
   const headingLine1Ref = useRef(null);
@@ -142,11 +147,7 @@ function Footer() {
   const nameRef = useRef(null);
   const navLinksDesktopRef = useRef([]);
   const navLinksMobileRef = useRef([]);
-
-  const handleNavigation = (path) => {
-    console.log(`Navigating to: ${path}`);
-    // In your actual project, use: navigate(path)
-  };
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Heading line 1 animation
@@ -323,8 +324,8 @@ function Footer() {
             >
               <i>
                 {" "}
-                You've got a story. Let's tell it in a way that feels real,
-                hits home, and sticks with people.
+                You've got a story. Let's tell it in a way that feels real, hits
+                home, and sticks with people.
               </i>
             </p>
 
@@ -348,7 +349,7 @@ function Footer() {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://wa.me/"
+                    href="https://wa.me/+96597522752"
                     className="block"
                   >
                     <FaWhatsapp className="w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7 " />
@@ -359,7 +360,7 @@ function Footer() {
               <MagneticEffect>
                 <div className="cursor-pointer">
                   <a
-                  onClick={handleGmailClick}
+                    onClick={handleGmailClick}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"
@@ -382,21 +383,21 @@ function Footer() {
               </h3>
               <h3
                 ref={(el) => (navLinksMobileRef.current[1] = el)}
-                onClick={() => handleNavigation("/work")}
+                onClick={() => navigate("/work")}
                 className="text-base cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors w-fit"
               >
                 {splitIntoLetters("Work")}
               </h3>
               <h3
                 ref={(el) => (navLinksMobileRef.current[2] = el)}
-                onClick={() => handleNavigation("/results")}
+                onClick={() => navigate("/results")}
                 className="text-base cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors w-fit"
               >
                 {splitIntoLetters("Results")}
               </h3>
               <h3
                 ref={(el) => (navLinksMobileRef.current[3] = el)}
-                onClick={() => handleNavigation("/about")}
+                onClick={() => navigate("/about")}
                 className="text-base cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors w-fit"
               >
                 {splitIntoLetters("About")}
@@ -425,28 +426,28 @@ function Footer() {
             <h2 className="font-bold text-xl mb-6">[NAVIGATION]</h2>
             <h3
               ref={(el) => (navLinksDesktopRef.current[0] = el)}
-              onClick={() => handleNavigation("/")}
+              onClick={() => navigate("/")}
               className="text-lg mb-1 cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors"
             >
               {splitIntoLetters("Home")}
             </h3>
             <h3
               ref={(el) => (navLinksDesktopRef.current[1] = el)}
-              onClick={() => handleNavigation("/work")}
+              onClick={() => navigate("/work")}
               className="text-lg mb-1 cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors"
             >
               {splitIntoLetters("Work")}
             </h3>
             <h3
               ref={(el) => (navLinksDesktopRef.current[2] = el)}
-              onClick={() => handleNavigation("/results")}
+              onClick={() => navigate("/results")}
               className="text-lg mb-1 cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors"
             >
               {splitIntoLetters("Results")}
             </h3>
             <h3
               ref={(el) => (navLinksDesktopRef.current[3] = el)}
-              onClick={() => handleNavigation("/about")}
+              onClick={() => navigate("/about")}
               className="text-lg cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors"
             >
               {splitIntoLetters("About")}

@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 function DisplayProjects() {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
-
   const headingRef = useRef(null);
   const cardsRef = useRef([]);
 
@@ -18,7 +17,7 @@ function DisplayProjects() {
     {
       id: 1,
       bgColor: "card-bg-2",
-      video: "/videos/reels/food1.mp4",
+      video: "/videos/reels/food2.mp4",
       creatorName: "akfoddvlogg",
       creatorProfile: "/images/testi/AK.jpg",
       rotation: 0.7,

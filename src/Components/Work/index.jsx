@@ -77,9 +77,9 @@ export default function WorkParallax() {
      
       <main className="mt-15 lg:mt-[10vh]">
         <div className="flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[villo] font-bold text-center text-white ">
-            YouTube Content
-          </h1>
+         <h2 className="text-4xl md:text-5xl text-white font-[villo]">
+            Youtube <span className='font-[apple]'>Content</span> 
+          </h2>
         </div>
 
         <div ref={container}>

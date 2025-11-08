@@ -47,7 +47,7 @@ function Navbar() {
             {/* Left Section */}
             <div className="flex items-center gap-8">
               <span className="text-white text-sm font-light tracking-wide whitespace-nowrap">
-                SALMIYA(KW) <span className="tracking-tighter font-[inter]">//</span> {kuwaitTime}
+                Kuwait <span className="tracking-tighter font-[inter]">//</span> {kuwaitTime}
               </span>
             </div>
 

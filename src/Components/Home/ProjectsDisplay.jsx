@@ -25,9 +25,9 @@ function DisplayProjects() {
     {
       id: 2,
       bgColor: "card-bg-1",
-      video: "/videos/marketing/tf.mp4",
-      creatorName: "hussainhk",
-      creatorProfile: "/images/testi/hussain HK.jpg",
+      video: "/videos/reels/abdu.mp4",
+      creatorName: "abdu.tayyib",
+      creatorProfile: "/images/testi/Abdu.jpg",
       rotation: -0.4,
     },
     {

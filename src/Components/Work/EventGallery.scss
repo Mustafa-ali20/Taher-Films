@@ -38,20 +38,19 @@
     padding: 0 20px;
 
     .heading-event {
-      font-family: 'villo' ;
-      font-size: clamp(48px, 8vw, 66px);
+      font-family: 'villo';
       color: #fff;
       margin: 0;
       letter-spacing: -2px;
-      text-transform: uppercase;
+      font-size: 50px; // Desktop/Monitor default
     }
 
     .heading-gallery {
       font-family: "apple";
-      font-size: clamp(48px, 8vw, 66px);
       color: #fff;
       margin: 0;
       letter-spacing: 2px;
+      font-size: 50px; // Desktop/Monitor default
     }
   }
 
@@ -209,14 +208,37 @@
   }
 }
 
-// Tablet
+// Large screens (1025px - 1440px)
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .event-gallery {
+    .heading-container {
+      .heading-event {
+        font-size: 70px; // Large screen size
+      }
+
+      .heading-gallery {
+        font-size: 70px; // Large screen size
+      }
+    }
+  }
+}
+
+// Tablet (641px - 1024px)
 @media (max-width: 1024px) {
   .event-gallery {
     padding: 40px 0;
 
     .heading-container {
-      margin-bottom: 60px;
+      margin-bottom: 70px;
       gap: 16px;
+
+      .heading-event {
+        font-size: 50px; // Tablet size
+      }
+
+      .heading-gallery {
+        font-size: 50px; // Tablet size
+      }
     }
 
     .videos-section {
@@ -254,7 +276,7 @@
   }
 }
 
-// Mobile
+// Mobile (up to 640px)
 @media (max-width: 640px) {
   .event-gallery {
     padding: 30px 0;
@@ -262,6 +284,14 @@
     .heading-container {
       margin-bottom: 40px;
       gap: 12px;
+
+      .heading-event {
+        font-size: 38px; // Mobile size
+      }
+
+      .heading-gallery {
+        font-size: 38px; // Mobile size
+      }
     }
 
     .videos-section {

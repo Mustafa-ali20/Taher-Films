@@ -78,7 +78,7 @@ const Card = ({
                   rel="noopener noreferrer"
                   className="text-sm md:text-base underline cursor-pointer hover:opacity-70 transition-opacity text-white drop-shadow-md font-semibold"
                 >
-                  See more
+                   Watch Now
                 </a>
                 <svg
                   width="22"

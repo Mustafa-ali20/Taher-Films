@@ -30,7 +30,7 @@ const ContentMarketing = () => {
         
         {/* Optional Section Title */}
         <div className="text-center px-8">
-          <h2 className="text-4xl md:text-5xl text-white mb-4 font-[villo]">
+          <h2 className="text-4xl md:text-5xl text-white mb-4 lg:mb-18 font-[villo]">
             Content <span className='font-[apple]'>Marketing</span> 
           </h2>
           

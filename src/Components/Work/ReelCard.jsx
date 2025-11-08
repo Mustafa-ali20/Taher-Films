@@ -33,10 +33,12 @@ const ReelCard = ({ reel, isMobile, isTablet }) => {
         videoRef.current?.pause();
         setIsPlaying(false);
       } else {
-        videoRef.current?.play();
+        if (videoRef.current) {
+          videoRef.current.currentTime = 0;
+          videoRef.current.muted = false;
+          videoRef.current.play();
+        }
         setIsMuted(false);
-        videoRef.current.muted = false;
-
         setIsPlaying(true);
       }
     }
@@ -57,6 +59,7 @@ const ReelCard = ({ reel, isMobile, isTablet }) => {
 
   // Determine when to show stats
   const showStats = isMobile || isTablet ? isPlaying : isHovered;
+  
   return (
     <div
       className="relative group cursor-pointer overflow-hidden rounded-3xl bg-black aspect-[9/16] transition-transform duration-300 origin-bottom lg:hover:scale-[1.03]"
@@ -64,7 +67,6 @@ const ReelCard = ({ reel, isMobile, isTablet }) => {
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
       style={{ transform: `rotate(${reel.rotation}deg)` }}
-
     >
       {/* Thumbnail Image */}
       <img

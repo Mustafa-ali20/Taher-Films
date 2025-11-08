@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import ReelCard from "./ReelCard";
 import EmptyEllipse from "./EmptyEllipse";
@@ -28,6 +26,7 @@ const InstaReels = () => {
     (r) => r.category === "storytelling"
   );
   const insightsReels = reelsData.filter((r) => r.category === "insights");
+  const podcastsReels = reelsData.filter((r) => r.category === "podcast");
 
   // LARGE SCREEN LAYOUT (Desktop 1024px+)
   if (!isMobile && !isTablet) {
@@ -49,12 +48,18 @@ const InstaReels = () => {
                 isTablet={isTablet}
               />
             ))}
-            <EmptyEllipse category="storytelling" caption="Every frame has a voice"/>
+            <EmptyEllipse
+              category="storytelling"
+              caption="Every frame has a voice"
+            />
           </div>
 
           {/* Food Section - Row 2: ellipse at start + 4 cards */}
           <div className="insta-reels__grid insta-reels__grid--layer-2">
-            <EmptyEllipse category="food" caption="Where taste meets the lens"/>
+            <EmptyEllipse
+              category="food"
+              caption="Where taste meets the lens"
+            />
             {foodReels.map((reel) => (
               <ReelCard
                 key={reel.id}
@@ -65,8 +70,28 @@ const InstaReels = () => {
             ))}
           </div>
 
-          {/* Insights Section - Row 3: 4 cards + ellipse at end */}
+          {/* Storytelling Section - Row 1: 4 cards + ellipse at end */}
           <div className="insta-reels__grid insta-reels__grid--layer-3">
+            {podcastsReels.map((reel) => (
+              <ReelCard
+                key={reel.id}
+                reel={reel}
+                isMobile={isMobile}
+                isTablet={isTablet}
+              />
+            ))}
+            <EmptyEllipse
+              category="Podcast"
+              caption="Where conversations come alive"
+            />
+          </div>
+
+          {/* Insights Section - Row 3: 4 cards + ellipse at end */}
+          <div className="insta-reels__grid insta-reels__grid--layer-4">
+            <EmptyEllipse
+              category="insights"
+              caption="Explained visually, understood easily"
+            />
             {insightsReels.map((reel) => (
               <ReelCard
                 key={reel.id}
@@ -75,7 +100,6 @@ const InstaReels = () => {
                 isTablet={isTablet}
               />
             ))}
-            <EmptyEllipse category="insights" caption="Explained visually, understood easily" />
           </div>
         </div>
       </div>
@@ -107,6 +131,18 @@ const InstaReels = () => {
           {/* Food - 3 per row */}
           <div className="insta-reels__grid">
             {foodReels.slice(0, 3).map((reel) => (
+              <ReelCard
+                key={reel.id}
+                reel={reel}
+                isMobile={isMobile}
+                isTablet={isTablet}
+              />
+            ))}
+          </div>
+
+          {/* podcast - 3 per row */}
+          <div className="insta-reels__grid">
+            {podcastsReels.slice(0, 3).map((reel) => (
               <ReelCard
                 key={reel.id}
                 reel={reel}
@@ -156,6 +192,18 @@ const InstaReels = () => {
         {/* Food - 2 per row */}
         <div className="insta-reels__grid">
           {foodReels.slice(0, 2).map((reel) => (
+            <ReelCard
+              key={reel.id}
+              reel={reel}
+              isMobile={isMobile}
+              isTablet={isTablet}
+            />
+          ))}
+        </div>
+
+        {/* podacasts - 2 per row */}
+        <div className="insta-reels__grid">
+          {podcastsReels.slice(0, 2).map((reel) => (
             <ReelCard
               key={reel.id}
               reel={reel}

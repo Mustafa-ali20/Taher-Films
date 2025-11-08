@@ -134,13 +134,13 @@ const contentMarketingData = [
   {
     id: 11,
     category: "content_marketing",
-    thumbnail: "/images/marketing/cm11.jpg",
-    video: "/videos/marketing/cm11.mp4",
+    thumbnail: "/images/marketing/cm20.jpg",
+    video: "/videos/marketing/cm20.mp4",
     views: "20K",
     likes: "300",
     shares: "100",
-    creator1Name: "akupdatesyou",
-    creator1Profile: "/images/testi/AK-updates.jpg",
+    creator1Name: "dar_razan_",
+    creator1Profile: "/images/testi/darrazan.jpg",
   },
   {
     id: 13,

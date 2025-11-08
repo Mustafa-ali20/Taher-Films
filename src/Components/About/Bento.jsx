@@ -4,6 +4,13 @@ import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 
 const Bento = () => {
+  const emailAddress = "taherfilmss@gmail.com";
+
+  const handleGmailClick = () => {
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
+    window.open(gmailUrl, "_blank");
+  };
+
   return (
     <div className="min-h-screen p-4 md:p-18 lg:h-screen lg:flex lg:items-center text-white">
       <div className="max-w-7xl mx-auto w-full lg:h-[calc(100vh-7rem)]">
@@ -104,7 +111,7 @@ const Bento = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">Gear.</h2>
                 <ul className="text-sm md:text-base text-zinc-200">
                   <li>▪ Canon R6ii, R10</li>
-                  <li>▪ RF 15-35 2.8, 50mm +</li>
+                  <li>▪ RF 15-35 2.8, 50mm</li>
                   <li>▪ Sennheiser System</li>
                   <li>▪ Godox LED Panels</li>
                 </ul>
@@ -123,11 +130,24 @@ const Bento = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://wa.me/+96597522752"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       ▪ WhatsApp
                     </a>
                   </li>
-                  <li>▪ Gmail</li>
+                  <li>
+                    <a
+                      onClick={handleGmailClick}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      ▪ Gmail
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -139,7 +159,7 @@ const Bento = () => {
                 <ul className="text-base space-y-1 text-zinc-200">
                   <li>▪ CAMERA — Canon R6ii, R10</li>
                   <li>▪ Lense — RF 15-35 2.8, 50mm 1.4</li>
-                  <li>▪ Audio — Sennheiser System & Wireless 2</li>
+                  <li>▪ Audio — Sennheiser System</li>
                   <li>▪ Lighting — Godox LED Panels</li>
                   <li>▪ Stabilization — DJI RS4 Gimbal</li>
                 </ul>
@@ -156,7 +176,7 @@ const Bento = () => {
                   </li>
                   <li>
                     <a
-                      href="https://wa.me/"
+                      href="https://wa.me/+96597522752"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -164,7 +184,14 @@ const Bento = () => {
                     </a>
                   </li>
                   <li>
-                    <Mail size={30} />
+                    <a
+                      onClick={handleGmailClick}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Mail size={30} />
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -172,14 +199,14 @@ const Bento = () => {
           </div>
 
           {/* Collaborations Box - Wide box spanning 2 columns */}
-          <div className="lg:col-span-2 rounded-3xl flex flex-col p-8 lg:px-7 lg:pt-8 lg:pb-6 h-[300px] lg:h-auto bg-black/40 border border-zinc-400/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_32px_rgba(161,161,170,0.12)]">
+          <div className="lg:col-span-2 rounded-3xl flex flex-col p-8 mt-5 md:mt-0 lg:px-7 lg:pt-8 lg:pb-6 h-[300px] lg:h-auto bg-black/40 border border-zinc-400/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_32px_rgba(161,161,170,0.12)]">
             <h2 className="text-4xl md:text-5xl font-bold mb-7">
               Collaborations.
             </h2>
 
             {/* Collaborators Names - Horizontal */}
             <div className="flex flex-wrap gap-4 md:gap-5 lg:gap-5 mb-8 justify-start lg:justify-start">
-              <h3 className="text-xl md:text-xl lg:text-xl font-medium text-zinc-100 flex">
+              <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
                   <img
                     src="/images/testi/prosports.jpg"
@@ -189,7 +216,7 @@ const Bento = () => {
                 </div>
                 <span class="inline md:hidden">▪ &nbsp;</span>Prosports
               </h3>
-              <h3 className="text-xl md:text-xl lg:text-xl font-medium text-zinc-100 flex">
+              <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
                   <img
                     src="/images/testi/amaron.jpg"
@@ -199,7 +226,7 @@ const Bento = () => {
                 </div>
                 <span class="inline md:hidden">▪ &nbsp;</span>Amaron
               </h3>
-              <h3 className="text-xl md:text-xl lg:text-xl font-medium text-zinc-100 flex">
+              <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
                   <img
                     src="/images/testi/abdigial.jpg"
@@ -209,7 +236,7 @@ const Bento = () => {
                 </div>
                 <span class="inline md:hidden">▪ &nbsp;</span> Abdigital
               </h3>
-              <h3 className="text-xl md:text-xl lg:text-xl font-medium text-zinc-100 flex">
+              <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
                   <img
                     src="/images/testi/mohammadi.jpg"
@@ -220,7 +247,7 @@ const Bento = () => {
                 <span class="inline md:hidden">▪ &nbsp;</span>Mohammadi Saree
                 House
               </h3>
-              <h3 className="text-xl md:text-xl lg:text-xl font-medium text-zinc-100 flex">
+              <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
                   <img
                     src="/images/testi/hussain HK.jpg"
@@ -230,7 +257,7 @@ const Bento = () => {
                 </div>
                 <span class="inline md:hidden">▪ &nbsp;</span> Hussain HK
               </h3>
-              <h3 className="text-xl md:text-baxlg:text-xl font-medium text-zinc-100 flex">
+              <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
                   <img
                     src="/images/testi/AK.jpg"
@@ -240,7 +267,7 @@ const Bento = () => {
                 </div>
                 <span class="inline md:hidden">▪ &nbsp;</span> Abdul Kareem
               </h3>
-              <h3 className="text-xl md:text-xl lg:text-xl font-medium text-zinc-100 flex">
+              <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
                   <img
                     src="/images/testi/anwar.jpg"
@@ -250,7 +277,7 @@ const Bento = () => {
                 </div>
                 <span class="inline md:hidden">▪ &nbsp; </span> Anwar Hakim
               </h3>
-              <h3 className="text-xl md:text-xl lg:text-xl font-medium text-zinc-100 flex">
+              <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
                   <img
                     src="/images/testi/Abdu.jpg"

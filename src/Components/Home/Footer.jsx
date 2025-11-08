@@ -376,7 +376,7 @@ function Footer() {
               <h2 className="font-bold text-lg mb-2">[NAVIGATION]</h2>
               <h3
                 ref={(el) => (navLinksMobileRef.current[0] = el)}
-                onClick={() => handleNavigation("/")}
+                onClick={() => navigate("/")}
                 className="text-base cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors w-fit"
               >
                 {splitIntoLetters("Home")}

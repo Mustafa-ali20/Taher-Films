@@ -444,7 +444,7 @@
     font-size: 2rem;
   }
   .results-page__summary-roles {
-    justify-content: center;
+    justify-content: center; 
   }
   .results-page__summary-brand-logo {
     min-width: 85px;
@@ -494,7 +494,7 @@
     padding: 1.75rem;
   }
   .results-page__summary-roles {
-    justify-content: flex-start;
+    justify-content: center;
   }
   .results-page__summary-brand-logo {
     min-width: 90px;

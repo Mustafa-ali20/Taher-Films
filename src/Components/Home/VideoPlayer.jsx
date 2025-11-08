@@ -1,7 +1,7 @@
 import { motion, useSpring } from "framer-motion";
 import { Play, Plus } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
-import './VideoPlayer.css';
+import "./VideoPlayer.css";
 
 export default function VideoPlayer({ videoSrc = "/videos/taherfilms2.mp4" }) {
   const [isEnlarged, setIsEnlarged] = useState(false);
@@ -39,7 +39,7 @@ export default function VideoPlayer({ videoSrc = "/videos/taherfilms2.mp4" }) {
         videoRef.current.currentTime = 0;
         videoRef.current.muted = false;
         videoRef.current.volume = 1.0;
-        
+
         setTimeout(() => {
           videoRef.current.play().catch((err) => {
             console.log("Play failed:", err);
@@ -162,6 +162,8 @@ export default function VideoPlayer({ videoSrc = "/videos/taherfilms2.mp4" }) {
           muted
           playsInline
           loop
+          preload="metadata"
+          loading="lazy"
           className="video-player__video"
         />
 

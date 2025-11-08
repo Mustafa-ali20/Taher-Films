@@ -152,6 +152,7 @@ $monitor-min: 1600px;
 
     @include respond-to($breakpoint-laptop) {
       font-size: 4rem;
+      padding-top: 9rem;
       margin-bottom: 6rem;
     }
   }

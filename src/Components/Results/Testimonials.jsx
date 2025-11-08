@@ -183,7 +183,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="min-h-[320vh] md:min-h-[260vh] lg:min-h-[230vh] py-12 px-4 md:px-8 lg:px-16 flex items-center">
+    <div className="min-h-[335vh] md:min-h-[265vh] lg:min-h-[240vh] py-12 px-4 md:px-8 lg:px-16 flex items-center">
       <style>{`
         .word-span {
           display: inline;

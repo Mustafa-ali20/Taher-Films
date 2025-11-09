@@ -95,11 +95,11 @@ const Bento = () => {
               Achievements.
             </h2>
             <ul className="space-y-1.5 text-base md:text-xl lg:space-y-0 text-zinc-200">
-              <li>▪ Edited 200+ Videos</li>
+              <li>▪ Edited 300+ Videos</li>
+              <li>▪ Editing Hours: 2000+</li>
               <li>▪ 10M+ Views Online</li>
               <li>▪ Collaborated with Top Influencers</li>
               <li>▪ Collaborated with Top brands</li>
-              <li>▪ Featured in Mom's WhatsApp Status (she's very proud😂)</li>
             </ul>
           </div>
 
@@ -111,7 +111,7 @@ const Bento = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">Gear.</h2>
                 <ul className="text-sm md:text-base text-zinc-200">
                   <li>▪ Canon R6ii, R10</li>
-                  <li>▪ RF 15-35 2.8, 50mm</li>
+                  <li>▪ RF 15-35 2.8, 35mm</li>
                   <li>▪ Sennheiser System</li>
                   <li>▪ Godox LED Panels</li>
                 </ul>
@@ -158,7 +158,7 @@ const Bento = () => {
               <div className="flex justify-between">
                 <ul className="text-base space-y-1 text-zinc-200">
                   <li>▪ CAMERA — Canon R6ii, R10</li>
-                  <li>▪ Lense — RF 15-35 2.8, 50mm 1.4</li>
+                  <li>▪ Lense — RF 15-35 2.8, 35mm 1.4</li>
                   <li>▪ Audio — Sennheiser System</li>
                   <li>▪ Lighting — Godox LED Panels</li>
                   <li>▪ Stabilization — DJI RS4 Gimbal</li>

@@ -1,4 +1,4 @@
-import { Asterisk } from "lucide-react";
+import { Asterisk, Volume2, VolumeX } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function DisplayProjects() {
   const [isHovered, setIsHovered] = useState(false);
+  const [mutedStates, setMutedStates] = useState({});
   const navigate = useNavigate();
   const headingRef = useRef(null);
   const cardsRef = useRef([]);
@@ -31,6 +32,14 @@ function DisplayProjects() {
       rotation: -0.4,
     },
     {
+      id: 4,
+      bgColor: "card-bg-4",
+      video: "/videos/marketing/tf.mp4",
+      creatorName: "hussainhk",
+      creatorProfile: "/images/testi/hussain HK.jpg",
+      rotation: 1,
+    },
+    {
       id: 3,
       bgColor: "card-bg-3",
       video: "/videos/marketing/cm1.mp4",
@@ -38,15 +47,16 @@ function DisplayProjects() {
       creatorProfile: "/images/testi/prosports.jpg",
       rotation: 0.3,
     },
-    {
-      id: 4,
-      bgColor: "card-bg-4",
-      video: "/videos/marketing/cm14.mp4",
-      creatorName: "smb_anwarhakim",
-      creatorProfile: "/images/testi/smb.jpg",
-      rotation: 1,
-    },
   ];
+
+  useEffect(() => {
+    // Initialize all videos as muted
+    const initialMutedStates = {};
+    cards.forEach(card => {
+      initialMutedStates[card.id] = true;
+    });
+    setMutedStates(initialMutedStates);
+  }, []);
 
   useEffect(() => {
     gsap.fromTo(
@@ -93,6 +103,13 @@ function DisplayProjects() {
     };
   }, []);
 
+  const toggleMute = (cardId) => {
+    setMutedStates(prev => ({
+      ...prev,
+      [cardId]: !prev[cardId]
+    }));
+  };
+
   return (
     <div className="featured-work">
       {/* Heading */}
@@ -135,10 +152,32 @@ function DisplayProjects() {
                 className="featured-work__card-video"
                 autoPlay
                 loop
-                muted
+                muted={mutedStates[card.id] !== false}
                 playsInline
+                onMouseEnter={(e) => {
+                  e.currentTarget.muted = false;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.muted = true;
+                }}
               />
             )}
+
+            {/* Mute/Unmute Button for Mobile/Tablet */}
+            <button
+              onClick={() => toggleMute(card.id)}
+              className="absolute bottom-4 right-4 lg:hidden p-2.5 rounded-full backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 z-10"
+              style={{
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+              }}
+            >
+              {mutedStates[card.id] !== false ? (
+                <VolumeX className="w-5 h-5 text-white" strokeWidth={2} />
+              ) : (
+                <Volume2 className="w-5 h-5 text-white" strokeWidth={2} />
+              )}
+            </button>
 
             {/* Creator Info */}
             <div className="featured-work__creator">

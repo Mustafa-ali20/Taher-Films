@@ -19,6 +19,23 @@ const TikTokIcon = () => (
 export default function ResultsPage() {
   const [data] = useState([
     {
+      photo: "/images/testi/Abdu.jpg",
+      name: "Abdu Tayyib",
+      instagram: "@brewwithabdu",
+      youtube: "brewwithabdu",
+      views: "1.5M+",
+      averageViews: "300K",
+      growthRate: "233%",
+      collabPeriod: "2 years",
+      keyRoles: ["Content Manager", "Production Manager"],
+      associatedNames: [
+        "Mansoor Al-Mansoor",
+        "Khalid Al Zanki",
+        "Mohammad Jafar",
+      ],
+      profession: "First English podcast in Kuwait",
+    },
+    {
       photo: "/images/testi/ak-crop.jpg",
       name: "Abdul Kareem",
       instagram: "@akfoodvlogg, @akvloggs, @akupdatesyou",
@@ -69,23 +86,7 @@ export default function ResultsPage() {
       work: ["Exhibtions", "Luxurious Chalet's", "Office makeovers"],
       profession: "Interior Architect",
     },
-    {
-      photo: "/images/testi/Abdu.jpg",
-      name: "Abdu Tayyib",
-      instagram: "@brewwithabdu",
-      youtube: "brewwithabdu",
-      views: "1.5M+",
-      averageViews: "300K",
-      growthRate: "233%",
-      collabPeriod: "2 years",
-      keyRoles: ["Content Manager", "Production Manager"],
-      associatedNames: [
-        "Mansoor Al-Mansoor",
-        "Khalid Al Zanki",
-        "Mohammad Jafar",
-      ],
-      profession: "First English podcast in Kuwait",
-    },
+    
   ]);
 
   const StatCard = ({

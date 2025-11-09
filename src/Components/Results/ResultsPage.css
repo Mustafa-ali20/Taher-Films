@@ -329,7 +329,7 @@
   }
   .results-page__profile-social-links {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
   }
   .results-page__profile-social-link {
     justify-content: center;
@@ -478,7 +478,7 @@
     font-size: 1rem;
   }
   .results-page__profile-social-links {
-    justify-content: center;
+    justify-content: start;
   }
   .results-page__stats-grid {
     grid-template-columns: repeat(2, 1fr);

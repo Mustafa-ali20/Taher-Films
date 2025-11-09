@@ -68,8 +68,8 @@ const reelsData = [
     category: "storytelling",
     thumbnail: "/images/reels/storytelling2.png",
     video: "/videos/reels/storytelling2.mp4",
-    views: "101K",
-    likes: "1K",
+    views: "186K",
+    likes: "2K",
     shares: "400",
     creatorName: "smb_anwarhakim",
     creatorProfile: "/images/testi/smb.jpg",
@@ -127,7 +127,7 @@ const reelsData = [
   },
   {
     id: 10,
-    category: "insights",
+    category: "podcast",
     thumbnail: "/images/reels/pod1.jpg",
     video: "/videos/reels/pod1.mp4",
     views: "33K",
@@ -189,7 +189,7 @@ const reelsData = [
 
   {
     id: 16,
-    category: "podcast",
+    category: "insights",
     thumbnail: "/images/reels/pod5.jpg",
     video: "/videos/reels/pod5.mp4",
     views: "4K",

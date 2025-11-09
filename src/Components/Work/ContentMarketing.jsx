@@ -21,8 +21,8 @@ const ContentMarketing = () => {
   // Split videos into two carousels
   // First carousel: 8 videos
   // Second carousel: 7 videos
-  const firstCarouselVideos = contentMarketingData.slice(0, 9);
-  const secondCarouselVideos = contentMarketingData.slice(9, 17);
+  const firstCarouselVideos = contentMarketingData.slice(0, 8);
+  const secondCarouselVideos = contentMarketingData.slice(8, 16);
 
   return (
     <section className="min-h-screen py-16 pt-26">

@@ -96,7 +96,7 @@ const Bento = () => {
             </h2>
             <ul className="space-y-1.5 text-base md:text-xl lg:space-y-0 text-zinc-200">
               <li>▪ 300+ Videos Edited</li>
-              <li>▪ 2000+ Hours Of Editing</li>
+              <li>▪ 1500+ Hours Of Editing</li>
               <li>▪ 10M+ Views Online</li>
               <li>▪ Collaborated with Top Influencers</li>
               <li>▪ Collaborated with Top brands</li>

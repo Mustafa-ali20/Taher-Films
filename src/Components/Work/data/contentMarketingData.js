@@ -181,6 +181,17 @@ const contentMarketingData = [
     creator2Name: "ixirexpo",
     creator2Profile: "/images/testi/ixirexpo.jpg",
   },
+  {
+    id: 18,
+    category: "content_marketing",
+    thumbnail: "/images/reels/abdu.jpg",
+    video: "/videos/reels/abdu.mp4",
+    views: "3K",
+    likes: "100",
+    shares: "5",
+    creator1Name: "abdu.tayyib",
+    creator1Profile: "/images/testi/Abdu.jpg",
+  },
 ];
 
 export default contentMarketingData;

@@ -81,9 +81,9 @@ const Bento = () => {
               <ul className="space-y-1.5 text-base md:text-xl lg:space-y-0 text-zinc-200">
                 <li>▪ Video Editing</li>
                 <li>▪ Videographer</li>
+                <li>▪ Scripting</li>
                 <li>▪ Visual Storytelling</li>
                 <li>▪ Content Strategy</li>
-                <li>▪ Photography</li>
               </ul>
             </div>
             <div className="wave-background"></div>
@@ -95,8 +95,8 @@ const Bento = () => {
               Achievements.
             </h2>
             <ul className="space-y-1.5 text-base md:text-xl lg:space-y-0 text-zinc-200">
-              <li>▪ Edited 300+ Videos</li>
-              <li>▪ Editing Hours: 2000+</li>
+              <li>▪ 300+ Videos Edited</li>
+              <li>▪ 2000+ Hours Of Editing</li>
               <li>▪ 10M+ Views Online</li>
               <li>▪ Collaborated with Top Influencers</li>
               <li>▪ Collaborated with Top brands</li>
@@ -199,7 +199,7 @@ const Bento = () => {
           </div>
 
           {/* Collaborations Box - Wide box spanning 2 columns */}
-          <div className="lg:col-span-2 rounded-3xl flex flex-col p-8 mt-5 md:mt-0 lg:px-7 lg:pt-8 lg:pb-6 h-[300px] lg:h-auto bg-black/40 border border-zinc-400/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_32px_rgba(161,161,170,0.12)]">
+          <div className="lg:col-span-2 rounded-3xl flex flex-col p-8 mt-4 md:mt-0 lg:px-7 lg:pt-8 lg:pb-6 h-[300px] lg:h-auto bg-black/40 border border-zinc-400/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_32px_rgba(161,161,170,0.12)]">
             <h2 className="text-4xl md:text-5xl font-bold mb-7">
               Collaborations.
             </h2>

@@ -214,7 +214,7 @@ const Bento = () => {
                     className="object-cover h-full w-full"
                   />
                 </div>
-                <span class="inline md:hidden">▪ &nbsp;</span>Prosports
+                <span class="inline md:hidden">▪ &nbsp;</span>Pro Sports
               </h3>
               <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
@@ -234,7 +234,7 @@ const Bento = () => {
                     className="object-cover h-full w-full"
                   />
                 </div>
-                <span class="inline md:hidden">▪ &nbsp;</span> Abdigital
+                <span class="inline md:hidden">▪ &nbsp;</span> Ab Digital
               </h3>
               <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">

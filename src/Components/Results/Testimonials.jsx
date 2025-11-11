@@ -36,7 +36,7 @@ const Testimonials = () => {
       id: 3,
       image: "/images/testi/Abdu.jpg",
       name: "Abdu Tayyib",
-      title: "English Podcast Host",
+      title: "Podcast Host",
       text: "If you want to scale without burning out, Taher handles everything so you can focus on creating. My videos went viral, quality skyrocketed, and growth became effortless.",
       rotation: "rotate-1",
       audio: "/audio/Abdu testimonial.mp3",

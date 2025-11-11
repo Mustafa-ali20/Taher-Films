@@ -99,7 +99,7 @@ const Bento = () => {
               <li>▪ 1500+ Hours Of Editing</li>
               <li>▪ 10M+ Views Online</li>
               <li>▪ Collaborated with Top Influencers</li>
-              <li>▪ Collaborated with Top brands</li>
+              <li>▪ Collaborated with Top Brands</li>
             </ul>
           </div>
 

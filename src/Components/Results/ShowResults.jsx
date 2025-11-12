@@ -43,7 +43,7 @@ export default function ResultsPage() {
       averageViews: "50K",
       growthRate: "44.45%",
       collabPeriod: "5 months",
-      keyRoles: ["Scriptwriting", "Creative", "Direction", "Editing"],
+      keyRoles: ["Scriptwriting", "Creative Direction", "Editing"],
       associatedBrands: [
         { name: "Tim Hortons", logo: "/images/brands/Tim_Hortons.png" },
         { name: "Chery", logo: "/images/brands/chery.png" },
@@ -63,7 +63,7 @@ export default function ResultsPage() {
       growthRate: "40%",
       collabPeriod: "9 months",
       collabPeriodOngoing: true,
-      keyRoles: ["Scriptwriting", "Creative", "Direction", "Editing"],
+      keyRoles: ["Scriptwriting", "Creative Direction", "Editing"],
       associatedBrands: [
         { name: "Ooredoo", logo: "/images/brands/Ooredoo.png" },
         { name: "Lulu Exchange", logo: "/images/brands/lulu.png" },
@@ -206,14 +206,14 @@ export default function ResultsPage() {
                   icon={Eye}
                   label="Total Views"
                   value={creator.views}
-                  unit="impressions"
+                  unit="views"
                   colorClass="purple"
                 />
                 <StatCard
                   icon={Heart}
-                  label="Average Views"
+                  label={creator.name === "Abdu Tayyib" ? "YouTube Views" : "Average Views"}
                   value={creator.averageViews}
-                  unit="per content"
+                  unit={creator.name === "Abdu Tayyib" ? "views" : "per content"}
                   colorClass="pink"
                 />
                 <StatCard

@@ -95,7 +95,7 @@ const Bento = () => {
               Achievements.
             </h2>
             <ul className="space-y-1.5 text-base md:text-xl lg:space-y-0 text-zinc-200">
-              <li>▪ 300+ Videos Edited</li>
+              <li>▪ 300+ Videos Created</li>
               <li>▪ 1500+ Hours Of Editing</li>
               <li>▪ 10M+ Views Online</li>
               <li>▪ Collaborated with Top Influencers</li>
@@ -234,7 +234,7 @@ const Bento = () => {
                     className="object-cover h-full w-full"
                   />
                 </div>
-                <span class="inline md:hidden">▪ &nbsp;</span> Ab Digital
+                <span class="inline md:hidden">▪ &nbsp;</span> AB Digital
               </h3>
               <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">

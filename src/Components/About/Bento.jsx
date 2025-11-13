@@ -118,7 +118,7 @@ const Bento = () => {
               </div>
 
               <div className="rounded-3xl flex flex-col py-4 px-4 md:px-8 md:pt-6 w-full bg-black/40 border border-zinc-400/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_32px_rgba(161,161,170,0.12)]">
-                <h2 className="text-3xl font-bold mb-2">Socials</h2>
+                <h2 className="text-3xl font-bold mb-2">Socials.</h2>
                 <ul className="text-sm md:text-xl space-y-1 text-zinc-200">
                   <li>
                     <a

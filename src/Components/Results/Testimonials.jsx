@@ -183,7 +183,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="min-h-[335vh] md:min-h-[265vh] lg:min-h-[240vh] py-12 px-4 md:px-8 lg:px-16 flex items-center">
+    <div className="min-h-[355vh] md:min-h-[265vh] lg:min-h-[240vh] py-12 px-4 md:px-8 lg:px-16 flex items-center">
       <style>{`
         .word-span {
           display: inline;
@@ -222,7 +222,7 @@ const Testimonials = () => {
                         />
                         <button
                           onClick={() => handleAudioToggle(index)}
-                          className="absolute bottom-2 right-2 min-w-[40px] h-10 bg-white/20 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center transition-all duration-300 overflow-hidden"
+                          className="absolute bottom-2 right-2 min-w-[40px] h-10 bg-red-900/70 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center transition-all duration-300 overflow-hidden"
                           aria-label={
                             playingIndex === index
                               ? "Pause audio"
@@ -242,7 +242,7 @@ const Testimonials = () => {
                             <div className="flex items-center justify-center relative w-full h-full">
                               <Play
                                 ref={(el) => (playIconRefs.current[index] = el)}
-                                className="w-5 h-5 text-white transition-opacity duration-300 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                                className="w-4 h-4 text-white transition-opacity duration-300 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                                 fill="white"
                               />
                             </div>

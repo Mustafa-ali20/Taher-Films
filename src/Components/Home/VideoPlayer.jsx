@@ -162,7 +162,7 @@ export default function VideoPlayer({ videoSrc = "/videos/taherfilms2.mp4" }) {
           muted
           playsInline
           loop
-          preload="metadata"
+          preload="auto"
           loading="lazy"
           className="video-player__video"
         />

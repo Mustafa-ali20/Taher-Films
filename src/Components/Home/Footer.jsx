@@ -372,7 +372,7 @@ function Footer() {
             </div>
 
             {/* Navigation - Shows on small screens only */}
-            <div className="flex flex-col gap-2 mb-12 lg:hidden">
+            {/* <div className="flex flex-col gap-2 mb-12 lg:hidden">
               <h2 className="font-bold text-lg mb-2">[NAVIGATION]</h2>
               <h3
                 ref={(el) => (navLinksMobileRef.current[0] = el)}
@@ -402,7 +402,7 @@ function Footer() {
               >
                 {splitIntoLetters("About")}
               </h3>
-            </div>
+            </div> */}
 
             {/* Copyright and Name */}
             <div className="mt-auto overflow-hidden">

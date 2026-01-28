@@ -110,8 +110,8 @@ const Bento = () => {
               <div className="rounded-3xl flex flex-col py-4 px-4 md:px-8 md:pt-6 w-full bg-black/40 border border-zinc-400/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_32px_rgba(161,161,170,0.12)]">
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">Gear.</h2>
                 <ul className="text-sm md:text-base text-zinc-200">
-                  <li>▪ Canon R6ii, R10</li>
-                  <li>▪ RF 15-35 2.8, 35mm</li>
+                  <li>▪ Sony FX3</li>
+                  <li>▪ Sigma 24-70 2.8</li>
                   <li>▪ Sennheiser System</li>
                   <li>▪ Godox LED Panels</li>
                 </ul>
@@ -157,8 +157,8 @@ const Bento = () => {
               <h2 className="text-5xl font-bold mb-8">Gear & Socials.</h2>
               <div className="flex justify-between">
                 <ul className="text-base space-y-1 text-zinc-200">
-                  <li>▪ CAMERA — Canon R6ii, R10</li>
-                  <li>▪ Lense — RF 15-35 2.8, 35mm 1.4</li>
+                  <li>▪ CAMERA — Sony FX3</li>
+                  <li>▪ Lense — Sigma 24-70 2.8</li>
                   <li>▪ Audio — Sennheiser System</li>
                   <li>▪ Lighting — Godox LED Panels</li>
                   <li>▪ Stabilization — DJI RS4 Gimbal</li>

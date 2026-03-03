@@ -7,6 +7,7 @@ import { IoMailOutline } from "react-icons/io5";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineYoutube } from "react-icons/ai";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,13 +131,6 @@ const MagneticEffect = ({ children }) => {
       {children}
     </motion.div>
   );
-};
-
-const emailAddress = "taherfilmss@gmail.com";
-
-const handleGmailClick = () => {
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
-  window.open(gmailUrl, "_blank");
 };
 
 function Footer() {
@@ -360,49 +354,16 @@ function Footer() {
               <MagneticEffect>
                 <div className="cursor-pointer">
                   <a
-                    onClick={handleGmailClick}
+                   href="https://www.youtube.com/@TaherFilmss"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <IoMailOutline className="w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7 " />
+                    <AiOutlineYoutube className="w-6.5 h-6.5 md:w-7.5 md:h-7.5 lg:w-8 lg:h-8 " />
                   </a>
                 </div>
               </MagneticEffect>
             </div>
-
-            {/* Navigation - Shows on small screens only */}
-            {/* <div className="flex flex-col gap-2 mb-12 lg:hidden">
-              <h2 className="font-bold text-lg mb-2">[NAVIGATION]</h2>
-              <h3
-                ref={(el) => (navLinksMobileRef.current[0] = el)}
-                onClick={() => navigate("/")}
-                className="text-base cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors w-fit"
-              >
-                {splitIntoLetters("Home")}
-              </h3>
-              <h3
-                ref={(el) => (navLinksMobileRef.current[1] = el)}
-                onClick={() => navigate("/work")}
-                className="text-base cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors w-fit"
-              >
-                {splitIntoLetters("Work")}
-              </h3>
-              <h3
-                ref={(el) => (navLinksMobileRef.current[2] = el)}
-                onClick={() => navigate("/results")}
-                className="text-base cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors w-fit"
-              >
-                {splitIntoLetters("Results")}
-              </h3>
-              <h3
-                ref={(el) => (navLinksMobileRef.current[3] = el)}
-                onClick={() => navigate("/about")}
-                className="text-base cursor-pointer text-zinc-300 hover:text-zinc-100 transition-colors w-fit"
-              >
-                {splitIntoLetters("About")}
-              </h3>
-            </div> */}
 
             {/* Copyright and Name */}
             <div className="mt-auto overflow-hidden">

@@ -1,16 +1,10 @@
-import { Mail, Zap } from "lucide-react";
+import { Youtube, Zap } from "lucide-react";
 import React from "react";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
+import { AiOutlineYoutube } from "react-icons/ai";
 
 const Bento = () => {
-  const emailAddress = "taherfilmss@gmail.com";
-
-  const handleGmailClick = () => {
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
-    window.open(gmailUrl, "_blank");
-  };
-
   return (
     <div className="min-h-screen p-4 md:p-18 lg:h-screen lg:flex lg:items-center text-white">
       <div className="max-w-7xl mx-auto w-full lg:h-[calc(100vh-7rem)]">
@@ -140,12 +134,12 @@ const Bento = () => {
                   </li>
                   <li>
                     <a
-                      onClick={handleGmailClick}
+                      href="https://www.youtube.com/@TaherFilmss"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block"
                     >
-                      ▪ Gmail
+                      ▪ Yotube
                     </a>
                   </li>
                 </ul>
@@ -185,12 +179,12 @@ const Bento = () => {
                   </li>
                   <li>
                     <a
-                      onClick={handleGmailClick}
+                      href="https://www.youtube.com/@TaherFilmss"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block"
                     >
-                      <Mail size={30} />
+                      <AiOutlineYoutube size={32} />
                     </a>
                   </li>
                 </ul>
@@ -214,7 +208,7 @@ const Bento = () => {
                     className="object-cover h-full w-full"
                   />
                 </div>
-                <span class="inline md:hidden">▪ &nbsp;</span>Pro Sports
+                <span className="inline md:hidden">▪ &nbsp;</span>Pro Sports
               </h3>
               <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
@@ -224,7 +218,7 @@ const Bento = () => {
                     className="object-cover h-full w-full"
                   />
                 </div>
-                <span class="inline md:hidden">▪ &nbsp;</span>Amaron
+                <span className="inline md:hidden">▪ &nbsp;</span>Amaron
               </h3>
               <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
@@ -234,7 +228,7 @@ const Bento = () => {
                     className="object-cover h-full w-full"
                   />
                 </div>
-                <span class="inline md:hidden">▪ &nbsp;</span> AB Digital
+                <span className="inline md:hidden">▪ &nbsp;</span> AB Digital
               </h3>
               <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
@@ -244,8 +238,8 @@ const Bento = () => {
                     className="object-cover h-full w-full"
                   />
                 </div>
-                <span class="inline md:hidden">▪ &nbsp;</span>Mohammadi Saree
-                House
+                <span className="inline md:hidden">▪ &nbsp;</span>Mohammadi
+                Saree House
               </h3>
               <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
@@ -255,7 +249,7 @@ const Bento = () => {
                     className="object-cover h-full w-full"
                   />
                 </div>
-                <span class="inline md:hidden">▪ &nbsp;</span> Hussain HK
+                <span className="inline md:hidden">▪ &nbsp;</span> Hussain HK
               </h3>
               <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
@@ -265,7 +259,7 @@ const Bento = () => {
                     className="object-cover h-full w-full"
                   />
                 </div>
-                <span class="inline md:hidden">▪ &nbsp;</span> Abdul Kareem
+                <span className="inline md:hidden">▪ &nbsp;</span> Abdul Kareem
               </h3>
               <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
@@ -275,7 +269,7 @@ const Bento = () => {
                     className="object-cover h-full w-full"
                   />
                 </div>
-                <span class="inline md:hidden">▪ &nbsp; </span> Anwar Hakim
+                <span className="inline md:hidden">▪ &nbsp; </span> Anwar Hakim
               </h3>
               <h3 className="text-base md:text-xl lg:text-xl font-medium text-zinc-100 flex">
                 <div className="h-8 w-8 rounded-full hidden md:block mr-3 overflow-hidden">
@@ -285,7 +279,7 @@ const Bento = () => {
                     className="object-cover h-full w-full"
                   />
                 </div>
-                <span class="inline md:hidden">▪ &nbsp;</span> Abdu Tayyib
+                <span className="inline md:hidden">▪ &nbsp;</span> Abdu Tayyib
               </h3>
             </div>
           </div>

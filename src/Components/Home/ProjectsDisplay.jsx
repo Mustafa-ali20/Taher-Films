@@ -18,7 +18,7 @@ function DisplayProjects() {
     {
       id: 1,
       bgColor: "card-bg-2",
-      video: "/videos/reels/food2.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966691/food2_gbn5bl.mp4",
       creatorName: "akfoddvlogg",
       creatorProfile: "/images/testi/AK.jpg",
       rotation: 0.7,
@@ -26,7 +26,7 @@ function DisplayProjects() {
     {
       id: 2,
       bgColor: "card-bg-1",
-      video: "/videos/reels/abdu.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966693/abdu_ytdh2r.mp4",
       creatorName: "abdu.tayyib",
       creatorProfile: "/images/testi/Abdu.jpg",
       rotation: -0.4,
@@ -34,7 +34,7 @@ function DisplayProjects() {
     {
       id: 4,
       bgColor: "card-bg-4",
-      video: "/videos/marketing/tf.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966950/tf_kclpbl.mp4",
       creatorName: "hussainhk",
       creatorProfile: "/images/testi/hussain HK.jpg",
       rotation: 1,
@@ -42,7 +42,7 @@ function DisplayProjects() {
     {
       id: 3,
       bgColor: "card-bg-3",
-      video: "/videos/marketing/cm1.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966926/cm1_zlfl0m.mp4",
       creatorName: "prosportskw",
       creatorProfile: "/images/testi/prosports.jpg",
       rotation: 0.3,

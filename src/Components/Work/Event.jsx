@@ -128,15 +128,15 @@ const EventGallery = () => {
 
       <div className="videos-section">
         <VideoPlayer
-          videoSrc="/videos/events/event1.mp4"
-          poster="/images/marketing/roadrush.png"
+          videoSrc="https://res.cloudinary.com/du62cpjs7/video/upload/v1774966844/event1_enuni5.mp4"
+          poster="https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/roadrush.png?updatedAt=1774954413452"
           marqueeText="ROADRUSH KUWAIT"
           direction="left"
         />
 
         <VideoPlayer
-          videoSrc="/videos/events/event2.mp4"
-          poster="/images/marketing/amaron.png"
+          videoSrc="https://res.cloudinary.com/du62cpjs7/video/upload/v1774966833/event2_c1hxro.mp4"
+          poster="https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/amaron.png?updatedAt=1774954413358"
           marqueeText="AMARON LAUNCH"
           direction="right"
         />

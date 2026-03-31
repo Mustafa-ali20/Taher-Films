@@ -21,42 +21,42 @@ function Blog() {
   const cards = [
     {
       id: 1,
-      video: "/videos/blog/taherfilms1.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967012/taherfilms1_zzggqm.mp4",
       rotation: -1.5,
     },
     {
       id: 2,
-      video: "/videos/blog/taherfilms5.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967035/taherfilms5_ofnddk.mp4",
       rotation: 0.5,
     },
     {
       id: 3,
-      video: "/videos/blog/taherfilms2.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967019/taherfilms2_caf0um.mp4",
       rotation: -1.5,
     },
     {
       id: 4,
-      video: "/videos/blog/introvid.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774971835/taherfilms3_gdtxcj.mp4",
       rotation: -1,
     },
     {
       id: 5,
-      video: "/videos/blog/taherfilms4.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967022/taherfilms4_o7rkfa.mp4",
       rotation: 1,
     },
     {
       id: 6,
-      video: "/videos/blog/taherfilms6.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967017/taherfilms6_j537zs.mp4",
       rotation: -0.5,
     },
     {
       id: 7,
-      video: "/videos/blog/taherfilms7.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967040/taherfilms7_ziiwv8.mp4",
       rotation: 0.5,
     },
     {
       id: 8,
-      video: "/videos/blog/taherfilms8.mp4",
+      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967009/taherfilms8_kha2jp.mp4",
       rotation: -1.5,
     },
   ];

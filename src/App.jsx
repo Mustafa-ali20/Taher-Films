@@ -6,6 +6,8 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
 import Navbar from "./Components/Navigation/Navbar";
 import PageTransition from "./Components/Transitions/PageTransition";
@@ -14,6 +16,7 @@ import Home from "./Pages/Home";
 import Work from "./Pages/Work";
 import About from "./Pages/About";
 import Results from "./Pages/Results";
+import VideoPage from "./Components/Work/VideoPage";
 import Lenis from "lenis";
 
 const AnimatedRoutes = ({ showLoader }) => {
@@ -54,6 +57,14 @@ const AnimatedRoutes = ({ showLoader }) => {
             </PageTransition>
           }
         />
+        <Route
+          path="/video/:id"
+          element={
+            <PageTransition>
+              <VideoPage />
+            </PageTransition>
+          }
+        />
       </Routes>
     </AnimatePresence>
   );
@@ -63,6 +74,9 @@ const AnimatedRoutes = ({ showLoader }) => {
 const lenis = new Lenis({
   autoRaf: true,
 });
+
+gsap.registerPlugin(ScrollTrigger);
+lenis.on("scroll", ScrollTrigger.update);
 
 // Listen for the scroll event and log the event data
 lenis.on("scroll", (e) => {});

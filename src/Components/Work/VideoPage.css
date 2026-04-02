@@ -1,0 +1,214 @@
+.video-page {
+  min-height: 100vh;
+  background: #130e09;
+  padding: 100px 40px 120px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.video-page__header {
+  text-align: center;
+  margin-bottom: 56px;
+  width: 100%;
+}
+.video-page__title {
+  font-family: "Villo", serif;
+  font-size: clamp(42px, 7vw, 100px);
+  color: #f0ece3;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+.video-page__subtitle {
+  font-family: "Apple Garamond", "Garamond", "EB Garamond", Georgia, serif;
+  font-size: clamp(14px, 1.6vw, 22px);
+  color: rgba(240, 236, 227, 0.45);
+  font-style: italic;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+.video-page__video-wrapper {
+  width: 100%;
+  max-width: 860px;
+  aspect-ratio: 16/9;
+  margin-bottom: 64px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.video-page__video-wrapper video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.video-page__cursor-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #f0ece3;
+  font-family: "villo";
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 5;
+}
+.video-page__cursor-label svg {
+  width: 12px;
+  height: 12px;
+  fill: #f0ece3;
+}
+.video-page__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-page__overlay-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.video-page__overlay-content {
+  position: relative;
+  z-index: 1;
+  width: 92vw;
+  max-width: 1400px;
+  aspect-ratio: 16/9;
+  max-height: 90vh;
+}
+.video-page__overlay-content video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  background: #000;
+}
+.video-page__controls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 25%, transparent 65%, rgba(0, 0, 0, 0.7) 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.video-page__overlay-content:hover .video-page__controls {
+  opacity: 1;
+}
+.video-page__close {
+  align-self: flex-end;
+  background: none;
+  color: #f0ece3;
+  font-family: "villo";
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+.video-page__bottom-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.video-page__progress-bar {
+  width: 100%;
+  height: 2px;
+  background: rgba(240, 236, 227, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.video-page__progress-bar-fill {
+  height: 100%;
+  background: #f0ece3;
+  border-radius: 2px;
+  pointer-events: none;
+  transition: width 0.1s linear;
+}
+.video-page__controls-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.video-page__play-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.video-page__play-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: #f0ece3;
+}
+.video-page__time {
+  font-family: "villo";
+  font-size: 13px;
+  color: rgba(240, 236, 227, 0.6);
+  letter-spacing: 0.05em;
+}
+.video-page__overview {
+  width: 100%;
+  max-width: 640px;
+  text-align: center;
+}
+.video-page__overview-label {
+  font-family: "villo";
+  font-size: clamp(11px, 1vw, 14px);
+  color: rgba(240, 236, 227, 0.35);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 24px;
+}
+.video-page__overview-text {
+  font-family: "villo";
+  font-size: clamp(15px, 1.4vw, 19px);
+  color: rgba(240, 236, 227, 0.7);
+  line-height: 1.85;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .video-page {
+    padding: 80px 0 80px;
+  }
+  .video-page__header {
+    padding: 0 24px;
+    margin-bottom: 36px;
+  }
+  .video-page__video-wrapper {
+    border-radius: 0;
+    margin-bottom: 48px;
+  }
+  .video-page__overlay-content {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+  .video-page__overview {
+    padding: 0 24px;
+  }
+}/*# sourceMappingURL=VideoPage.css.map */

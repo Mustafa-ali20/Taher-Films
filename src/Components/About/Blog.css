@@ -187,7 +187,6 @@
 }
 @media (min-width: 768px) {
   .blog__item-brand {
-    width: 100%;
     font-size: 0.69rem;
   }
 }

@@ -1,0 +1,258 @@
+.video-page {
+  min-height: 100vh;
+  background: #130e09;
+  padding: 100px 40px 120px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // ── Header ──────────────────────────────────────────
+  &__header {
+    text-align: center;
+    margin-bottom: 56px;
+    width: 100%;
+  }
+
+  &__title {
+    font-family: "Villo", serif;
+    font-size: clamp(42px, 7vw, 100px);
+    color: #f0ece3;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+
+  &__subtitle {
+    font-family: "Apple Garamond", "Garamond", "EB Garamond", Georgia, serif;
+    font-size: clamp(14px, 1.6vw, 22px);
+    color: rgba(240, 236, 227, 0.45);
+    font-style: italic;
+    letter-spacing: 0.08em;
+    margin: 0;
+  }
+
+  // ── Small preview video ─────────────────────────────
+  &__video-wrapper {
+    width: 100%;
+    max-width: 860px;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 64px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+ &__cursor-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #f0ece3;
+  font-family: "villo";
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 5;
+
+  svg {
+    width: 12px;
+    height: 12px;
+    fill: #f0ece3;
+  }
+}
+
+  // ── Fullscreen overlay ──────────────────────────────
+  // Covers the entire viewport, fixed so it's always on top
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    // Center the content panel inside
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__overlay-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  // The actual video container — centered, 16/9, large
+  &__overlay-content {
+    position: relative;
+    z-index: 1;
+    // Fill most of the screen width, keeping aspect ratio
+    width: 92vw;
+    max-width: 1400px;
+    aspect-ratio: 16 / 9;
+    // Make sure it doesn't overflow vertically on short screens
+    max-height: 90vh;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #000;
+    }
+  }
+
+  // ── Fullscreen controls ─────────────────────────────
+  &__controls {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      transparent 25%,
+      transparent 65%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    // Hide controls by default, show on hover
+    opacity: 0;
+    transition: opacity 0.25s ease;
+
+    .video-page__overlay-content:hover & {
+      opacity: 1;
+    }
+  }
+
+  &__close {
+    align-self: flex-end;
+    background: none;
+    color: #f0ece3;
+    font-family: "villo";
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+
+  &__bottom-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__progress-bar {
+    width: 100%;
+    height: 2px;
+    background: rgba(240, 236, 227, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
+
+    &-fill {
+      height: 100%;
+      background: #f0ece3;
+      border-radius: 2px;
+      pointer-events: none;
+      transition: width 0.1s linear;
+    }
+  }
+
+  &__controls-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__play-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 32px;
+      height: 32px;
+      fill: #f0ece3;
+    }
+  }
+
+  &__time {
+    font-family: "villo";
+    font-size: 13px;
+    color: rgba(240, 236, 227, 0.6);
+    letter-spacing: 0.05em;
+  }
+
+  // ── Overview ─────────────────────────────────────────
+  &__overview {
+    width: 100%;
+    max-width: 640px;
+    text-align: center;
+  }
+
+  &__overview-label {
+    font-family: "villo";
+    font-size: clamp(11px, 1vw, 14px);
+    color: rgba(240, 236, 227, 0.35);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  &__overview-text {
+    font-family: "villo";
+    font-size: clamp(15px, 1.4vw, 19px);
+    color: rgba(240, 236, 227, 0.7);
+    line-height: 1.85;
+    margin: 0;
+  }
+}
+
+// ── Responsive ───────────────────────────────────────
+@media (max-width: 768px) {
+  .video-page {
+    padding: 80px 0 80px;
+
+    &__header {
+      padding: 0 24px;
+      margin-bottom: 36px;
+    }
+
+    &__video-wrapper {
+      border-radius: 0;
+      margin-bottom: 48px;
+    }
+
+    &__overlay-content {
+      width: 100vw;
+      max-width: 100vw;
+      max-height: 100vh;
+    }
+
+    &__overview {
+      padding: 0 24px;
+    }
+  }
+}

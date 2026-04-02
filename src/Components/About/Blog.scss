@@ -1,145 +1,86 @@
-// ============================================
+// ─────────────────────────────────────────────
 // Variables
-// ============================================
+// ─────────────────────────────────────────────
+$color-bg: #130e09;
 $color-white: #ffffff;
-$color-black: #000000;
-$color-zinc: #71717a;
-$color-dark-bg: #1a1a1a;
-$color-border-gray: rgba(156, 163, 175, 0.4);
+$color-dim: 0.13;
+$color-brand: rgba(255, 255, 255, 0.45);
 
-$border-radius-lg: 1.5rem;
-$border-radius-full: 9999px;
-
-$transition-standard: all 0.3s ease;
-$transition-slow: all 0.5s ease-out;
-
-// Breakpoints
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $breakpoint-laptop: 1280px;
-$breakpoint-xl: 1441px;
+$breakpoint-mobile-max: 900px;
 
-// New breakpoints matching projects display
-$mobile-max: 767px;
-$tablet-min: 768px;
-$tablet-max: 1023px;
-$laptop-min: 1024px;
-$laptop-max: 1599px;
-$monitor-min: 1600px;
+$transition-base: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-// ============================================
-// Mixins
-// ============================================
-@mixin respond-to($breakpoint) {
-  @media (min-width: $breakpoint) {
+@mixin respond-to($bp) {
+  @media (min-width: $bp) {
     @content;
   }
 }
 
-@mixin mobile {
-  @media (max-width: $mobile-max) {
+@mixin mobile-only {
+  @media (max-width: $breakpoint-mobile-max) {
     @content;
   }
 }
 
-@mixin tablet {
-  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
-    @content;
-  }
-}
-
-@mixin laptop {
-  @media (min-width: $laptop-min) and (max-width: $laptop-max) {
-    @content;
-  }
-}
-
-@mixin monitor {
-  @media (min-width: $monitor-min) {
-    @content;
-  }
-}
-
-@mixin aspect-ratio($width, $height) {
-  aspect-ratio: $width / $height;
-}
-
-@mixin glassmorphism($blur: 10px, $opacity: 0.05) {
-  background: rgba(255, 255, 255, $opacity);
-  backdrop-filter: blur($blur);
-  -webkit-backdrop-filter: blur($blur);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-// ============================================
-// Keyframes
-// ============================================
-@keyframes float1 {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(20px, -15px);
-  }
-}
-
-@keyframes float2 {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-25px, 20px);
-  }
-}
-
-@keyframes float3 {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(15px, 15px);
-  }
-}
-
-// ============================================
-// Main Component
-// ============================================
-.blog-page {
+// ─────────────────────────────────────────────
+// Root
+// ─────────────────────────────────────────────
+.blog {
+  background: $color-bg;
+  color: $color-white;
   min-height: 100vh;
-  width: 100%;
-  
-  // Mobile (default)
-  padding: 5rem 2.5rem;
+  overflow-x: hidden;
+  position: relative;
 
-  @include tablet {
-    padding: 5rem 5rem;
-  }
+  // ─── Fixed dotted centre line ───
+  &__center-line {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 
-  @include laptop {
-    padding: 10rem 7.5rem 8rem;
-    
-    // For smaller height screens, increase top padding
-    @media (max-height: 768px) {
-      padding-top: 35rem;
+    &--visible {
+      opacity: 1;
+    }
+
+    @include mobile-only {
+      display: none;
     }
   }
 
-  @include monitor {
-    padding: 14.5rem 7.5rem 12rem;
+  &__center-line-inner {
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.7) 0px,
+      rgba(255, 255, 255, 0.7) 10px,
+      transparent 10px,
+      transparent 22px
+    );
   }
 
-  // ============================================
-  // Heading
-  // ============================================
+  // ─── Heading ───
   &__heading {
     font-size: 2.25rem;
     color: $color-white;
     text-align: center;
     margin-bottom: 4rem;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    position: relative;
+    z-index: 10;
 
     @include respond-to($breakpoint-md) {
       font-size: 3rem;
@@ -160,284 +101,220 @@ $monitor-min: 1600px;
   &__heading-villo {
     font-family: "villo", sans-serif;
     line-height: 1.2;
+    display: block;
   }
 
   &__heading-apple {
     font-family: "apple", sans-serif;
+    display: block;
+    font-size: 0.55em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
   }
 
-  // ============================================
-  // Grid
-  // ============================================
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    justify-items: center;
-    margin-bottom: 4rem;
-
-    @include respond-to($breakpoint-md) {
-      gap: 2rem;
-    }
-
-    @include respond-to($breakpoint-lg) {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin-bottom: 6.5rem;
-    }
-
-    @include respond-to($breakpoint-laptop) {
-      gap: 1.5rem;
-      margin-bottom: 7rem;
-    }
-  }
-
-  // ============================================
-  // Card
-  // ============================================
-  &__card {
-    background-color: $color-zinc;
-    border-radius: $border-radius-lg;
-    transition: $transition-slow;
-    cursor: pointer;
+  // ─── Timeline section ───
+  &__timeline {
     position: relative;
-    overflow: hidden;
+    padding-bottom: 8rem;
+  }
 
-    // Mobile
-    height: 30vh;
-    width: 40vw;
-    margin-bottom: 2.5rem;
+  &__items {
+    display: flex;
+    flex-direction: column;
 
-    // Tablet
-    @include respond-to($breakpoint-md) {
-      height: 40vh;
-      width: 40vw;
-    }
-
-    // Large screens (laptops and above) - 9:16 aspect ratio, smaller size
-    @include respond-to($breakpoint-lg) {
-      height: auto;
-      width: 100%;
-      max-width: 300px;
-      @include aspect-ratio(9, 16);
-    }
-
-    @include respond-to($breakpoint-laptop) {
-      max-width: 300px;
-    }
-
-    @include respond-to($breakpoint-xl) {
-      max-width: 320px;
+    @include mobile-only {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 0 1.25rem;
     }
   }
 
-  &__card-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: $border-radius-lg;
-  }
+  // ─── Individual item ───
+  &__item {
+    display: flex;
+    align-items: center;
+    // More space between items
+    padding: 4rem 0;
+    transition: opacity $transition-base;
+    cursor: default;
+    position: relative;
 
-  &__card-overlay {
-    position: absolute;
-    inset: 0;
-    border-radius: $border-radius-lg;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-    opacity: 0;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    // RIGHT side: title near center line, video to the right of it
+    &--right {
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-top: -1rem;
+      // Push title so it starts just past the 50% center line
+      padding-left: calc(50% + 22px);
+
+      @include mobile-only {
+        flex-direction: column !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        align-items: flex-start;
+        justify-content: flex-start !important;
+      }
+    }
+
+    // LEFT side: video on the far left, title closest to center line
+    // DOM order: [video][gap][title]
+    // flex-direction: row means visually: video is far left, title is near center
+    &--left {
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+      // Push title so it ends just before the 50% center line
+      padding-right: calc(48%);
+
+      @include mobile-only {
+        flex-direction: column !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        align-items: flex-start;
+        justify-content: flex-start !important;
+      }
+    }
+
+    &--dimmed {
+      opacity: $color-dim;
+    }
 
     &--active {
       opacity: 1;
+
+      .blog__video-wrap video {
+        transform: scale(1.03);
+      }
+    }
+
+    @include mobile-only {
+      flex-direction: column !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      align-items: flex-start;
+      justify-content: flex-start !important;
     }
   }
 
-  // ============================================
-  // Audio Indicator (Mobile/Tablet only)
-  // ============================================
-  &__audio-indicator {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
-    border-radius: $border-radius-full;
-    padding: 0.5rem;
-    transition: $transition-standard;
-    z-index: 10;
+  // ─── Title block ───
+  &__item-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    flex-shrink: 0;
+    width: 350px;
 
-    &--unmuted {
-      background-color: rgba(255, 255, 255, 0.2);
+    .blog__item--left .blog__item-title {
+      text-align: right;
     }
 
-    @include respond-to($breakpoint-lg) {
+    @include mobile-only {
+      width: 100%;
+      order: 2;
+      margin-top: 0.65rem;
+    }
+  }
+
+  &__item-name {
+    font-family: "villo", sans-serif;
+    // Bigger name
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    color: $color-white;
+  }
+
+  &__item-brand {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-brand;
+    font-family: "apple", sans-serif;
+    width: 70%;
+
+    @include mobile-only {
+      width: 100%;
+      font-size: 0.5rem;
+    }
+    @include respond-to($breakpoint-md) {
+      width: 100%;
+      font-size: 0.69rem;
+    }
+  }
+
+  // ─── Gap between title and video — more space ───
+  &__item-gap {
+    width: 280px;
+    flex-shrink: 0;
+
+    @include mobile-only {
       display: none;
     }
   }
 
-  &__audio-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    color: $color-white;
-  }
-
-  // ============================================
-  // Button Container
-  // ============================================
-  &__button-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  // ============================================
-  // Button
-  // ============================================
-  &__button {
+  // ─── Video wrap — bigger ───
+  &__video-wrap {
+    width: 280px;
+    flex-shrink: 0;
     position: relative;
-    background-color: $color-dark-bg;
-    color: $color-white;
-    padding: 0.75rem 1.5rem;
-    border-radius: $border-radius-full;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    transition: $transition-standard;
-    border-top: 1px solid $color-border-gray;
-    border-left: 1px solid $color-border-gray;
-    border-right: 1px solid $color-border-gray;
-    border-bottom: none;
+    border-radius: 4px;
     overflow: hidden;
+
+    video {
+      width: 100%;
+      aspect-ratio: 9 / 14;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+      transition: transform $transition-base;
+    }
+
+    @include mobile-only {
+      width: 100%;
+      order: 1;
+
+      video {
+        width: 100%;
+        aspect-ratio: 9 / 14;
+      }
+    }
+  }
+
+  // ─── Mobile mute button ───
+  &__mute-btn {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(19, 14, 9, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-
-    @include respond-to($breakpoint-md) {
-      padding: 1rem 2.5rem;
-      gap: 1rem;
-    }
-
-    @include respond-to($breakpoint-lg) {
-      padding: 0.75rem 2rem;
-      gap: 0.75rem;
-    }
-  }
-
-  &__button-bg {
-    position: absolute;
-    inset: 0;
-    border-radius: $border-radius-full;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-
-  &__button-glass {
-    position: absolute;
-    inset: 0;
-    border-radius: $border-radius-full;
-    @include glassmorphism(10px, 0.05);
-    z-index: 1;
-  }
-
-  &__button-orbs {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    border-radius: $border-radius-full;
-    z-index: 0;
-  }
-
-  &__button-orb {
-    position: absolute;
-    border-radius: $border-radius-full;
-
-    &--1 {
-      width: 6rem;
-      height: 6rem;
-      background: radial-gradient(
-        circle,
-        rgba(255, 85, 174, 0.9) 0%,
-        rgba(255, 85, 174, 0) 70%
-      );
-      filter: blur(20px);
-      top: 20%;
-      left: 10%;
-      animation: float1 8s ease-in-out infinite;
-    }
-
-    &--2 {
-      width: 7rem;
-      height: 7rem;
-      background: radial-gradient(
-        circle,
-        rgba(255, 50, 50, 0.85) 0%,
-        rgba(255, 50, 50, 0) 70%
-      );
-      filter: blur(25px);
-      top: 40%;
-      right: 15%;
-      animation: float2 10s ease-in-out infinite;
-    }
-
-    &--3 {
-      width: 5rem;
-      height: 5rem;
-      background: radial-gradient(
-        circle,
-        rgba(200, 0, 60, 0.85) 0%,
-        rgba(200, 0, 60, 0) 70%
-      );
-      filter: blur(18px);
-      bottom: 25%;
-      left: 40%;
-      animation: float3 9s ease-in-out infinite;
-    }
-  }
-
-  &__button-icon-wrapper {
-    background-color: $color-white;
-    border-radius: $border-radius-full;
-    padding: 0.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-    position: relative;
     z-index: 10;
+    padding: 0;
+    transition: background 0.2s ease;
 
-    @include respond-to($breakpoint-md) {
-      padding: 0.25rem;
+    svg {
+      width: 14px;
+      height: 14px;
+      fill: $color-white;
+      display: block;
     }
 
-    .blog-page__button:hover & {
-      transform: rotate(90deg);
-    }
-  }
-
-  &__button-icon {
-    width: 1rem;
-    height: 1rem;
-    color: $color-black;
-
-    @include respond-to($breakpoint-md) {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-  }
-
-  &__button-text {
-    font-size: 0.875rem;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    position: relative;
-    font-family: "villo", sans-serif;
-    z-index: 10;
-
-    @include respond-to($breakpoint-md) {
-      font-size: 1.125rem;
+    &:hover {
+      background: rgba(19, 14, 9, 0.95);
     }
 
-    @include respond-to($breakpoint-lg) {
-      font-size: 1.125rem;
+    @include mobile-only {
+      display: flex;
     }
   }
 }

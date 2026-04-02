@@ -1,325 +1,255 @@
-import { Asterisk, Volume2, VolumeX } from "lucide-react";
-import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./Blog.css";
+import { useEffect, useRef, useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
+import "./Blog.scss";
 
-gsap.registerPlugin(ScrollTrigger);
+const blogItems = [
+  {
+    id: 1,
+    brand: "You didn’t fall in love with the algorithm.",
+    name: "Slave to the Algorithm",
+    side: "right",
+    src: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774971835/taherfilms3_gdtxcj.mp4",
+  },
+  {
+    id: 2,
+    brand: "Some things were planned, some just fell into place.",
+    name: "Unique + Relatable",
+    side: "left",
+    src: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967040/taherfilms7_ziiwv8.mp4",
+  },
+  {
+    id: 3,
+    brand: "input lacks values so does the output.",
+    name: "You Are What You Consume",
+    side: "right",
+    src: "https://res.cloudinary.com/du62cpjs7/video/upload/v1775147517/Video8_jtrkuq.mp4",
+  },
+  {
+    id: 4,
+    brand: "Efforts behind the scenes often go unnoticed.",
+    name: "We Almost Ruined It",
+    side: "left",
+    src: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967022/taherfilms4_o7rkfa.mp4",
+  },
+  {
+    id: 5,
+    brand: "Audio is the unsung hero of storytelling.",
+    name: "Why Audio Matters",
+    side: "right",
+    src: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967019/taherfilms2_caf0um.mp4",
+  },
+  {
+    id: 6,
+    brand: "Editing is just the art of guiding attention.",
+    name: "Why We Overthink?",
+    side: "left",
+    src: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967012/taherfilms1_zzggqm.mp4",
+  },
+  {
+    id: 7,
+    brand: "The Ultimate Audio Experience with Sennheiser.",
+    name: "Sennheiser Profile Wireless",
+    side: "right",
+    src: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967035/taherfilms5_ofnddk.mp4",
+  },
+  {
+    id: 8,
+    brand: "High end cameras aren't the only way to make good content.",
+    name: "Choose Audience Preferences",
+    side: "left",
+    src: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967009/taherfilms8_kha2jp.mp4",
+  },
+];
 
-function Blog() {
-  const [isHovered, setIsHovered] = useState(false);
-  const [activeVideoIndex, setActiveVideoIndex] = useState(null);
-  const [mutedStates, setMutedStates] = useState(Array(8).fill(true));
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
-  const navigate = useNavigate();
+function BlogItem({ item, activeIndex, isMobile, onMouseEnter, onMouseLeave }) {
+  const videoRef = useRef(null);
+  const itemRef = useRef(null);
+  const [muted, setMuted] = useState(true);
+  const isActive = activeIndex === item.id;
+  const isDimmed = activeIndex !== -1 && !isActive;
 
-  const headingRef = useRef(null);
-  const cardsRef = useRef([]);
-  const videoRefs = useRef([]);
-
-  const cards = [
-    {
-      id: 1,
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967012/taherfilms1_zzggqm.mp4",
-      rotation: -1.5,
-    },
-    {
-      id: 2,
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967035/taherfilms5_ofnddk.mp4",
-      rotation: 0.5,
-    },
-    {
-      id: 3,
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967019/taherfilms2_caf0um.mp4",
-      rotation: -1.5,
-    },
-    {
-      id: 4,
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774971835/taherfilms3_gdtxcj.mp4",
-      rotation: -1,
-    },
-    {
-      id: 5,
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967022/taherfilms4_o7rkfa.mp4",
-      rotation: 1,
-    },
-    {
-      id: 6,
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967017/taherfilms6_j537zs.mp4",
-      rotation: -0.5,
-    },
-    {
-      id: 7,
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967040/taherfilms7_ziiwv8.mp4",
-      rotation: 0.5,
-    },
-    {
-      id: 8,
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967009/taherfilms8_kha2jp.mp4",
-      rotation: -1.5,
-    },
-  ];
-
-  // Check screen size
+  // Autoplay muted on mount — on hover just unmute
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024);
-    };
-
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
-
-  // GSAP Animations
-  useEffect(() => {
-    // Animate heading
-    gsap.fromTo(
-      headingRef.current,
-      {
-        y: 60,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 80%",
-          once: true,
-        },
-      }
-    );
-
-    // Animate cards with random stagger
-    cardsRef.current.forEach((card, index) => {
-      if (card) {
-        const randomDelay = Math.random() * 0.4;
-
-        gsap.fromTo(
-          card,
-          {
-            y: 80,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 1.2,
-            delay: randomDelay,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: card,
-              start: "top 90%",
-              once: true,
-            },
-          }
-        );
-      }
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
-  // Desktop hover handler (large screens only)
-  const handleVideoHover = (index) => {
-    if (!isLargeScreen) return;
-    
-    setActiveVideoIndex(index);
-    
-    videoRefs.current.forEach((video, i) => {
-      if (video) {
-        if (i === index) {
-          video.currentTime = 0; // Restart video from beginning
-          video.muted = false;
-          video.play();
-        } else {
-          video.pause();
-        }
-      }
-    });
-  };
-
-  // Desktop hover leave handler (large screens only)
-  const handleVideoLeave = (index) => {
-    if (!isLargeScreen) return;
-    
-    setActiveVideoIndex(null);
-    
-    videoRefs.current.forEach((video) => {
-      if (video) {
-        video.muted = true;
-        video.play();
-      }
-    });
-  };
-
-  // Mobile/Tablet click handler (small/medium screens only)
-  const handleVideoClick = (index) => {
-    if (isLargeScreen) return;
-    
-    const video = videoRefs.current[index];
+    const video = videoRef.current;
     if (!video) return;
+    video.muted = true;
+    video.play().catch(() => {});
+  }, []);
 
-    const newMutedStates = [...mutedStates];
-    const isCurrentlyMuted = newMutedStates[index];
+  // On hover: unmute. On leave: mute again.
+  useEffect(() => {
+  if (isMobile) return;
+  const video = videoRef.current;
+  if (!video) return;
 
-    if (isCurrentlyMuted) {
-      setActiveVideoIndex(index);
-      newMutedStates[index] = false;
-      video.currentTime = 0; // Restart video from beginning
-      video.muted = false;
-      video.play();
+  if (isActive) {
+    video.currentTime = 0;  // restart on hover
+    video.muted = false;
+    video.play().catch(() => {});
+    setMuted(false);
+  } else {
+    video.muted = true;
+    setMuted(true);
+  }
+}, [isActive, isMobile]);
 
-      videoRefs.current.forEach((v, i) => {
-        if (v && i !== index) {
-          v.pause();
-        }
-      });
+  // Tighter hover detection — only trigger when mouse is directly over the item element
+  const handleMouseMove = (e) => {
+    if (isMobile) return;
+    const isOverContent =
+      e.target.closest(".blog__video-wrap") ||
+      e.target.closest(".blog__item-title");
+    if (isOverContent) {
+      onMouseEnter(item.id);
     } else {
-      setActiveVideoIndex(null);
-      newMutedStates[index] = true;
-      video.muted = true;
-
-      videoRefs.current.forEach((v) => {
-        if (v) {
-          v.muted = true;
-          v.play();
-        }
-      });
+      onMouseLeave();
     }
-
-    setMutedStates(newMutedStates);
   };
 
+  const handleMuteToggle = (e) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setMuted(video.muted);
+  };
+
+const handleMobileVideoClick = () => {
+  if (!isMobile) return;
+  const video = videoRef.current;
+  if (!video) return;
+  // restart + toggle mute
+  video.currentTime = 0;
+  video.muted = !video.muted;
+  setMuted(video.muted);
+  if (video.paused) video.play().catch(() => {});
+};
+
+  const videoBlock = (
+    <div className="blog__video-wrap" onClick={handleMobileVideoClick}>
+      <video
+        ref={videoRef}
+        src={item.src || undefined}
+        loop
+        muted
+        playsInline
+        preload="auto"
+      />
+      <button
+        className="blog__mute-btn"
+        aria-label="Toggle mute"
+        onClick={handleMuteToggle}
+      >
+        {muted ? <VolumeX size={14} color="#f0ece3" /> : <Volume2 size={14} color="#f0ece3" />}
+      </button>
+    </div>
+  );
+
+  const titleBlock = (
+    <div className="blog__item-title">
+      <span className="blog__item-name">{item.name}</span>
+      <span className="blog__item-brand">{item.brand}</span>
+    </div>
+  );
+
+  // LEFT side: video on the far left, title closest to the center line
+  // RIGHT side: title closest to the center line, video on the far right
   return (
-    <div className="blog-page">
-      {/* Heading */}
-      <h2 ref={headingRef} className="blog-page__heading">
-        <span className="blog-page__heading-villo">Creative </span>
-        <span className="blog-page__heading-apple">Journey.</span>
-      </h2>
-
-      {/* Cards Grid */}
-      <div className="blog-page__grid">
-        {cards.map((card, index) => (
-          <div
-            key={card.id}
-            ref={(el) => (cardsRef.current[index] = el)}
-            className="blog-page__card"
-            style={{
-              transform: `rotate(${card.rotation}deg)`,
-              transformOrigin: "bottom",
-            }}
-            onClick={() => handleVideoClick(index)}
-            onMouseEnter={(e) => {
-              handleVideoHover(index);
-              if (isLargeScreen) {
-                gsap.to(e.currentTarget, {
-                  scale: 1.03,
-                  boxShadow: "0 0 30px rgba(255,255,255,0.15)",
-                  duration: 0.5,
-                  ease: "power2.out",
-                });
-              }
-            }}
-            onMouseLeave={(e) => {
-              handleVideoLeave(index);
-              if (isLargeScreen) {
-                gsap.to(e.currentTarget, {
-                  scale: 1,
-                  boxShadow: "0 0 0px rgba(255,255,255,0)",
-                  duration: 0.5,
-                  ease: "power2.out",
-                });
-              }
-            }}
-          >
-            {card.video && (
-              <video
-                ref={(el) => (videoRefs.current[index] = el)}
-                src={card.video}
-                className="blog-page__card-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                loading="lazy"
-              />
-            )}
-
-            {/* Blur Overlay */}
-            <div
-              className={`blog-page__card-overlay ${
-                activeVideoIndex !== null && activeVideoIndex !== index
-                  ? "blog-page__card-overlay--active"
-                  : ""
-              }`}
-            />
-
-            {/* Audio indicator for small/medium screens */}
-            {!isLargeScreen && (
-              <div
-                className={`blog-page__audio-indicator ${
-                  !mutedStates[index] ? 'blog-page__audio-indicator--unmuted' : ''
-                }`}
-              >
-                {mutedStates[index] ? (
-                  <VolumeX className="blog-page__audio-icon" strokeWidth={2} />
-                ) : (
-                  <Volume2 className="blog-page__audio-icon" strokeWidth={2} />
-                )}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Centered Button */}
-      <div className="blog-page__button-container">
-        <button
-          onClick={() => navigate("/work")}
-          className="blog-page__button"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {/* Animated Background Layer */}
-          <div
-            className="blog-page__button-bg"
-            style={{
-              opacity: isHovered ? 1 : 0,
-              pointerEvents: "none",
-            }}
-          >
-            {/* Glassmorphism Layer */}
-            <div className="blog-page__button-glass" />
-
-            {/* Animated Color Orbs Behind Glass */}
-            <div className="blog-page__button-orbs">
-              <div className="blog-page__button-orb blog-page__button-orb--1" />
-              <div className="blog-page__button-orb blog-page__button-orb--2" />
-              <div className="blog-page__button-orb blog-page__button-orb--3" />
-            </div>
-          </div>
-
-          {/* Icon with circular white background */}
-          <div className="blog-page__button-icon-wrapper">
-            <Asterisk className="blog-page__button-icon" strokeWidth={2} />
-          </div>
-
-          {/* Text */}
-          <span className="blog-page__button-text">Go to Works</span>
-        </button>
-      </div>
+    <div
+      ref={itemRef}
+      className={[
+        "blog__item",
+        `blog__item--${item.side}`,
+        isActive ? "blog__item--active" : "",
+        isDimmed ? "blog__item--dimmed" : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={onMouseLeave}
+    >
+      {item.side === "left" ? (
+        <>
+          {videoBlock}
+          <div className="blog__item-gap" />
+          {titleBlock}
+        </>
+      ) : (
+        <>
+          {titleBlock}
+          <div className="blog__item-gap" />
+          {videoBlock}
+        </>
+      )}
     </div>
   );
 }
 
-export default Blog;
+export default function Blog() {
+  const headingRef = useRef(null);
+  const [lineVisible, setLineVisible] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 900);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (isMobile) {
+        setLineVisible(false);
+        return;
+      }
+      const heading = headingRef.current;
+      if (!heading) return;
+      const bottom = heading.getBoundingClientRect().bottom;
+      setLineVisible(bottom <= 96);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isMobile]);
+
+  const handleMouseEnter = (id) => {
+    if (!isMobile) setActiveIndex(id);
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) setActiveIndex(-1);
+  };
+
+  return (
+    <div className="blog">
+      {!isMobile && (
+        <div
+          className={`blog__center-line ${lineVisible ? "blog__center-line--visible" : ""}`}
+        >
+          <div className="blog__center-line-inner" />
+        </div>
+      )}
+
+      <header className="blog__heading" ref={headingRef}>
+        <span className="blog__heading-villo">Creative Journey</span>
+      </header>
+
+      <section className="blog__timeline">
+        <div className="blog__items">
+          {blogItems.map((item) => (
+            <BlogItem
+              key={item.id}
+              item={item}
+              activeIndex={activeIndex}
+              isMobile={isMobile}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}

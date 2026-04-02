@@ -1,5 +1,5 @@
 import { useRef, useState, useCallback } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import "./VideoPage.scss";
 
@@ -21,6 +21,7 @@ const fallbackEvent = {
 
 const VideoPage = () => {
   const { state } = useLocation();
+  const navigate = useNavigate();
   const event = state?.event || fallbackEvent;
 
   const fullVideoRef = useRef(null);
@@ -37,6 +38,11 @@ const VideoPage = () => {
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  const handleBack = (e) => {
+    e.stopPropagation();
+    navigate("/work");
   };
 
   const formatTime = (secs) => {
@@ -104,6 +110,22 @@ const VideoPage = () => {
 
   return (
     <div className="video-page">
+      <button
+        className="video-page__back-btn"
+        onClick={handleBack}
+        aria-label="Back to work"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M15 18l-6-6 6-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
       {/* Header */}
       <div className="video-page__header">
         <h1 className="video-page__title">{event.title}</h1>

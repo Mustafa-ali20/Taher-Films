@@ -8,6 +8,25 @@
   align-items: center;
 
   // ── Header ──────────────────────────────────────────
+
+// ...existing code...
+
+  &__back-btn {
+    position: fixed;
+    top: 170px;
+    left: 28px;
+    z-index: 1100;
+    color: #f0ece3;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+      stroke: currentColor;
+      fill: none;
+    }
+  }
+
   &__header {
     text-align: center;
     margin-bottom: 56px;
@@ -234,6 +253,12 @@
 @media (max-width: 768px) {
   .video-page {
     padding: 80px 0 80px;
+
+    &__back-btn {
+      top:  100px;
+      left: 10px;
+      font-size: 22px;
+    }
 
     &__header {
       padding: 0 24px;

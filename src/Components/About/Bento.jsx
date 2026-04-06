@@ -6,8 +6,8 @@ import { AiOutlineYoutube } from "react-icons/ai";
 
 const Bento = () => {
   return (
-    <div className="min-h-screen p-4 md:p-18 lg:h-screen lg:flex lg:items-center text-white">
-      <div className="max-w-7xl mx-auto w-full lg:h-[calc(100vh-7rem)]">
+    <div className="min-h-screen p-4 md:p-18 lg:min-h-screen lg:flex lg:items-center lg:py-8 text-white">
+      <div className="max-w-7xl mx-auto w-full lg:min-h-[calc(100vh-7rem)]">
         {/* Grid Container */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-3 lg:grid-rows-[1fr_1fr_0.5fr] lg:h-full font-[villo]">
           {/* Image Box - Takes full height on left (2 rows) */}
@@ -85,7 +85,7 @@ const Bento = () => {
 
           {/* Achievements Box */}
           <div className="rounded-3xl p-8 flex flex-col h-[300px] lg:h-auto bg-black/40 border border-zinc-400/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_32px_rgba(161,161,170,0.12)]">
-            <h2 className="text-5xl md:text-5xl font-bold mb-6 lg:mb-10">
+            <h2 className="text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-bold mb-6 lg:mb-10">
               Achievements.
             </h2>
             <ul className="space-y-1.5 text-base md:text-xl lg:space-y-0 text-zinc-200">

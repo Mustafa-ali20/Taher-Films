@@ -204,7 +204,7 @@ $transition-base: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     flex-direction: column;
     gap: 0.7rem;
     flex-shrink: 0;
-    width: 350px;
+    width: clamp(180px, 20vw, 320px);
 
     .blog__item--left .blog__item-title {
       text-align: right;
@@ -247,7 +247,7 @@ $transition-base: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   // ─── Gap between title and video — more space ───
   &__item-gap {
-    width: 280px;
+     width: clamp(40px, 4vw, 120px); 
     flex-shrink: 0;
 
     @include mobile-only {
@@ -257,7 +257,7 @@ $transition-base: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   // ─── Video wrap — bigger ───
   &__video-wrap {
-    width: 280px;
+   width: clamp(160px, 16vw, 240px);  
     flex-shrink: 0;
     position: relative;
     border-radius: 4px;

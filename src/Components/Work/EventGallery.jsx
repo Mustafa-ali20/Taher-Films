@@ -9,33 +9,45 @@ const eventsData = [
     id: 1,
     title: "Road Rush",
     subtitle: "Concert Event",
-    video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966844/event1_enuni5.mp4",
-    thumbnail: "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/roadrush.png?updatedAt=1774954413452",
-    description: "An electrifying concert event video for Road Rush, capturing the high-energy performances, vibrant crowd, and dynamic stage presence. The video showcases the essence of the event, highlighting the unforgettable experience and the connection between the artists and their fans.",
+    video:
+      "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966844/event1_enuni5.mp4",
+    thumbnail:
+      "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/roadrush.png?updatedAt=1774954413452",
+    description:
+      "An electrifying concert event video for Road Rush, capturing the high-energy performances by Sean Paul and Badar Al Shuaibi. The video showcases the essence of the event, highlighting the unforgettable stage experience and the connection between the artists and their fans.",
   },
   {
     id: 2,
     title: "Amaron",
     subtitle: "Brand Event",
-    video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966833/event2_c1hxro.mp4",
-    thumbnail: "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/amaron.png?updatedAt=1774954413358",
-    description: "A dynamic brand event video for Amaron, showcasing the energy and excitement of the launch. The video captures the vibrant atmosphere, engaging activities, and enthusiastic crowd, highlighting Amaron's commitment to innovation and customer engagement.",
+    video:
+      "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966833/event2_c1hxro.mp4",
+    thumbnail:
+      "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/amaron.png?updatedAt=1774954413358",
+    description:
+      "A dynamic brand event video for Amaron, showcasing the energy and excitement of the launch. The video captures the vibrant atmosphere, engaging activities, and enthusiastic crowd, highlighting Amaron's commitment to innovation and customer engagement.",
   },
   {
     id: 3,
     title: "Kazakhstan",
     subtitle: "Travel Diary",
-    video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1775137110/Kazakasthan_1_heip4l.mp4",
-    thumbnail: "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/WhatsApp%20Image%202026-04-01%20at%2016.00.14.jpeg",
-    description: "A captivating travel diary video from Kazakhstan, showcasing the breathtaking landscapes, rich culture, and unforgettable experiences. The video takes you on a journey through the heart of the country, highlighting its natural beauty and vibrant local life.",
+    video:
+      "https://res.cloudinary.com/du62cpjs7/video/upload/v1775137110/Kazakasthan_1_heip4l.mp4",
+    thumbnail:
+      "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/WhatsApp%20Image%202026-04-01%20at%2016.00.14.jpeg",
+    description:
+      "Shot across six days in Kazakhstan. No storyline. No narration plan. Just friends and freezing air. Somewhere between nowhere end everything.",
   },
-   {
+  {
     id: 4,
     title: "Sigma BF",
     subtitle: "Brand Collaboration",
-    video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1775049458/Sigma_BF_yfdixd.mp4",
-    thumbnail: "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/Sigma.png",
-    description: "A compelling brand collaboration video for Sigma BF, demonstrating the seamless integration of both brands. The video highlights the innovative approach and shared vision, creating a powerful narrative that resonates with the target audience.",
+    video:
+      "https://res.cloudinary.com/du62cpjs7/video/upload/v1775049458/Sigma_BF_yfdixd.mp4",
+    thumbnail:
+      "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/Sigma.png",
+    description:
+      "’ve used a lot of cameras. Most of them made me feel like I was working for them. This one just let me shoot. Pick it up, hit record, done. No rig. No overthinking. And somewhere in that simplicity, I remembered why I started doing this in the first place. Made this one in collaboration with AAB World.",
   },
 ];
 
@@ -51,7 +63,11 @@ const EventCard = ({ event, isFullWidth }) => {
   const handleMouseEnter = () => {
     const video = videoRef.current;
     if (!video) return;
-    gsap.to(wrapperRef.current, { scale: 1, duration: 0.5, ease: "power2.out" });
+    gsap.to(wrapperRef.current, {
+      scale: 1,
+      duration: 0.5,
+      ease: "power2.out",
+    });
     video.play().catch(() => {});
   };
 
@@ -85,9 +101,7 @@ const EventCard = ({ event, isFullWidth }) => {
     <div
       ref={cardRef}
       className={`event-gallery__card ${
-        isFullWidth
-          ? "event-gallery__card--full"
-          : "event-gallery__card--half"
+        isFullWidth ? "event-gallery__card--full" : "event-gallery__card--half"
       }`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

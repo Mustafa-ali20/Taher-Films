@@ -6,14 +6,14 @@ const blogItems = [
   {
     id: 1,
     brand: "You didn’t fall in love with the algorithm.",
-    name: "Slave to the Algorithm",
+    name: "Slaves to the Algorithm",
     side: "right",
     src: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774971835/taherfilms3_gdtxcj.mp4",
   },
   {
     id: 2,
     brand: "Some things were planned, some just fell into place.",
-    name: "Unique + Relatable",
+    name: "Reel Breakdown",
     side: "left",
     src: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774967040/taherfilms7_ziiwv8.mp4",
   },

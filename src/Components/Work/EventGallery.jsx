@@ -47,7 +47,7 @@ const eventsData = [
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/Sigma.png",
     description:
-      "’ve used a lot of cameras. Most of them made me feel like I was working for them. This one just let me shoot. Pick it up, hit record, done. No rig. No overthinking. And somewhere in that simplicity, I remembered why I started doing this in the first place. Made this one in collaboration with AAB World.",
+      "I’ve used a lot of cameras. Most of them made me feel like I was working for them. This one just let me shoot. Pick it up, hit record, done. No rig. No overthinking. And somewhere in that simplicity, I remembered why I started doing this in the first place. Made this one in collaboration with AAB World.",
   },
 ];
 

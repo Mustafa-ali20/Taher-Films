@@ -1,4 +1,4 @@
-import { Youtube, Zap } from "lucide-react";
+import { Zap } from "lucide-react";
 import React from "react";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
@@ -139,7 +139,7 @@ const Bento = () => {
                       rel="noopener noreferrer"
                       className="block"
                     >
-                      ▪ Yotube
+                      ▪ Youtube
                     </a>
                   </li>
                 </ul>

@@ -18,7 +18,7 @@ function DisplayProjects() {
     {
       id: 1,
       bgColor: "card-bg-2",
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966691/food2_gbn5bl.mp4",
+      video: "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777894228/food2_v8czki.mp4",
       creatorName: "akfoddvlogg",
       creatorProfile: "/images/testi/AK.jpg",
       rotation: 0.7,
@@ -34,7 +34,7 @@ function DisplayProjects() {
     {
       id: 4,
       bgColor: "card-bg-4",
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966950/tf_kclpbl.mp4",
+      video: "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777897840/tf_xnego7.mp4",
       creatorName: "hussainhk",
       creatorProfile: "/images/testi/hussain HK.jpg",
       rotation: 1,
@@ -42,7 +42,7 @@ function DisplayProjects() {
     {
       id: 3,
       bgColor: "card-bg-3",
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966926/cm1_zlfl0m.mp4",
+      video: "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777902166/prosports_pnuodb.mp4",
       creatorName: "prosportskw",
       creatorProfile: "/images/testi/prosports.jpg",
       rotation: 0.3,

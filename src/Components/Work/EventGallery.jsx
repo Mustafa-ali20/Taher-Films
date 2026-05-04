@@ -10,7 +10,7 @@ const eventsData = [
     title: "Road Rush",
     subtitle: "Concert Event",
     video:
-      "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966844/event1_enuni5.mp4",
+      "https://res.cloudinary.com/dg9nicwim/video/upload/q_auto/f_auto/v1777901684/event1_xje9ke.mp4",
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/roadrush.png?updatedAt=1774954413452",
     description:
@@ -32,7 +32,7 @@ const eventsData = [
     title: "Kazakhstan",
     subtitle: "Travel Diary",
     video:
-      "https://res.cloudinary.com/du62cpjs7/video/upload/v1775137110/Kazakasthan_1_heip4l.mp4",
+      "https://res.cloudinary.com/dg9nicwim/video/upload/q_auto/f_auto/v1777901308/kazakhstan_rxzf5y.mp4",
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/WhatsApp%20Image%202026-04-01%20at%2016.00.14.jpeg",
     description:
@@ -43,7 +43,7 @@ const eventsData = [
     title: "Sigma BF",
     subtitle: "Brand Collaboration",
     video:
-      "https://res.cloudinary.com/du62cpjs7/video/upload/v1775049458/Sigma_BF_yfdixd.mp4",
+      "https://res.cloudinary.com/dg9nicwim/video/upload/q_auto/f_auto/v1777901592/SigmaBF_vfccjk.mp4",
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/Sigma.png",
     description:

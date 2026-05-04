@@ -3,7 +3,7 @@ import { Play, Plus } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 import "./VideoPlayer.css";
 
-export default function VideoPlayer({ videoSrc = "/videos/taherfilms2.mp4" }) {
+export default function VideoPlayer({ videoSrc = "https://res.cloudinary.com/dg9nicwim/video/upload/q_auto/f_auto/v1777902364/taherintro_kck6fz.mp4" }) {
   const [isEnlarged, setIsEnlarged] = useState(false);
   const [screenSize, setScreenSize] = useState("lg");
   const videoRef = useRef(null);

@@ -18,14 +18,14 @@ const eventsData = [
   },
   {
     id: 2,
-    title: "Amaron",
+    title: "Top 5",
     subtitle: "Brand Event",
     video:
-      "https://res.cloudinary.com/dg9nicwim/video/upload/q_auto/f_auto/v1777978805/event2_kbu6l4.mp4",
+      "https://res.cloudinary.com/dg9nicwim/video/upload/q_auto/f_auto/v1777980849/TOP_5_Website_export_3_zzqg1y.mp4",
     thumbnail:
-      "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/amaron.png?updatedAt=1774954413358",
+      "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/Screenshot%202026-05-05%20at%203.20.33%E2%80%AFPM.png",
     description:
-      "A dynamic brand event video for Amaron, showcasing the energy and excitement of the launch. The video captures the vibrant atmosphere, engaging activities, and enthusiastic crowd, highlighting Amaron's commitment to innovation and customer engagement.",
+      "We captured the intensity of one of Kuwait’s top 5 boxing gyms, showcasing real training and raw dedication. From powerful drills to focused coaching moments, every frame highlights their passion and discipline. Edited to deliver a cinematic feel that reflects the gym’s energy and commitment to shaping fighters..",
   },
   {
     id: 3,

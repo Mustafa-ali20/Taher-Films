@@ -21,7 +21,7 @@ const eventsData = [
     title: "Amaron",
     subtitle: "Brand Event",
     video:
-      "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966833/event2_c1hxro.mp4",
+      "https://res.cloudinary.com/dg9nicwim/video/upload/q_auto/f_auto/v1777978805/event2_kbu6l4.mp4",
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/amaron.png?updatedAt=1774954413358",
     description:

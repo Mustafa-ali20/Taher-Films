@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import './DisplayProjects.css';
+import "./DisplayProjects.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +18,8 @@ function DisplayProjects() {
     {
       id: 1,
       bgColor: "card-bg-2",
-      video: "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777894228/food2_v8czki.mp4",
+      video:
+        "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777894228/food2_v8czki.mp4",
       creatorName: "akfoddvlogg",
       creatorProfile: "/images/testi/AK.jpg",
       rotation: 0.7,
@@ -26,7 +27,8 @@ function DisplayProjects() {
     {
       id: 2,
       bgColor: "card-bg-1",
-      video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966693/abdu_ytdh2r.mp4",
+      video:
+        "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777979260/abdu_gqtrbk.mp4",
       creatorName: "abdu.tayyib",
       creatorProfile: "/images/testi/Abdu.jpg",
       rotation: -0.4,
@@ -34,7 +36,8 @@ function DisplayProjects() {
     {
       id: 4,
       bgColor: "card-bg-4",
-      video: "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777897840/tf_xnego7.mp4",
+      video:
+        "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777979114/tf_oqwrr2.mp4",
       creatorName: "hussainhk",
       creatorProfile: "/images/testi/hussain HK.jpg",
       rotation: 1,
@@ -42,7 +45,8 @@ function DisplayProjects() {
     {
       id: 3,
       bgColor: "card-bg-3",
-      video: "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777902166/prosports_pnuodb.mp4",
+      video:
+        "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777902166/prosports_pnuodb.mp4",
       creatorName: "prosportskw",
       creatorProfile: "/images/testi/prosports.jpg",
       rotation: 0.3,
@@ -52,7 +56,7 @@ function DisplayProjects() {
   useEffect(() => {
     // Initialize all videos as muted
     const initialMutedStates = {};
-    cards.forEach(card => {
+    cards.forEach((card) => {
       initialMutedStates[card.id] = true;
     });
     setMutedStates(initialMutedStates);
@@ -72,7 +76,7 @@ function DisplayProjects() {
           start: "top 80%",
           once: true,
         },
-      }
+      },
     );
 
     cardsRef.current.forEach((card, index) => {
@@ -93,7 +97,7 @@ function DisplayProjects() {
               start: "top 90%",
               once: true,
             },
-          }
+          },
         );
       }
     });
@@ -104,9 +108,9 @@ function DisplayProjects() {
   }, []);
 
   const toggleMute = (cardId) => {
-    setMutedStates(prev => ({
+    setMutedStates((prev) => ({
       ...prev,
-      [cardId]: !prev[cardId]
+      [cardId]: !prev[cardId],
     }));
   };
 
@@ -168,8 +172,8 @@ function DisplayProjects() {
               onClick={() => toggleMute(card.id)}
               className="absolute bottom-4 right-4 lg:hidden p-2.5 rounded-full backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 z-10"
               style={{
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
               }}
             >
               {mutedStates[card.id] !== false ? (

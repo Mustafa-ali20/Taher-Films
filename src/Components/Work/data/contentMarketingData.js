@@ -77,7 +77,7 @@ const contentMarketingData = [
     id: 8,
     category: "content_marketing",
     thumbnail: "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/cm18.jpg?updatedAt=1774954410071",
-    video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966917/cm18_gvufgj.mp4", //
+    video: "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777978965/cm18_zn8xs8.mp4",
     views: "313K",
     likes: "4.6K",
     shares: "8.6K",
@@ -123,7 +123,7 @@ const contentMarketingData = [
     id: 11,
     category: "content_marketing",
     thumbnail: "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/cm20.jpg?updatedAt=1774954409771",
-    video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966896/cm20_c3avtb.mp4", //
+    video: "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777978973/cm20_hpmhln.mp4",
     views: "20K",
     likes: "300",
     shares: "100",

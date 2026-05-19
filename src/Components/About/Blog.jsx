@@ -36,7 +36,7 @@ const blogItems = [
     brand: "Audio is the unsung hero of storytelling.",
     name: "Why Audio Matters",
     side: "right",
-    src: "https://res.cloudinary.com/dg9nicwim/video/upload/q_auto/f_auto/v1777900351/taherfilms7_xoyo6h.mp4",
+    src: "https://res.cloudinary.com/dg9nicwim/video/upload/q_auto/f_auto/v1777900355/taherfilms2_t5koos.mp4",
   },
   {
     id: 6,

@@ -19,7 +19,7 @@ const eventsData = [
   {
     id: 2,
     title: "Top 5",
-    subtitle: "Brand Event",
+    subtitle: "introduction Film",
     video:
       "https://res.cloudinary.com/dg9nicwim/video/upload/q_auto/f_auto/v1777980849/TOP_5_Website_export_3_zzqg1y.mp4",
     thumbnail:

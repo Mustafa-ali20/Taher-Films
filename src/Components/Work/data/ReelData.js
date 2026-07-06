@@ -7,7 +7,7 @@ const reelsData = [
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Reels/food1.png?updatedAt=1774954366295",
     video:
-      "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777893189/food1_m8qmuc.mp4",
+      "https://vz-963c42bb-849.b-cdn.net/11207cd4-c122-4e0f-9a61-8d0914cc7a9e/playlist.m3u8",
     views: "737K",
     likes: "19K",
     shares: "27K",
@@ -21,7 +21,7 @@ const reelsData = [
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Reels/food4.png?updatedAt=1774954366391",
     video:
-      "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777894215/food4_wgqopp.mp4",
+      "https://vz-963c42bb-849.b-cdn.net/997cb648-dfd4-49c5-9b42-c097644dc993/playlist.m3u8",
     views: "110K",
     likes: "2K",
     shares: "2.3K",
@@ -35,7 +35,7 @@ const reelsData = [
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Reels/food2.png?updatedAt=1774954366149",
     video:
-      "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777894228/food2_v8czki.mp4",
+      "https://vz-963c42bb-849.b-cdn.net/77257f41-437e-4c16-89a2-31618f9db7b2/playlist.m3u8",
     views: "164K",
     likes: "4K",
     shares: "2.8K",
@@ -49,7 +49,7 @@ const reelsData = [
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Reels/food3.jpg?updatedAt=1774954364679",
     video:
-      "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777894226/food3_qsmwjx.mp4",
+      "https://vz-963c42bb-849.b-cdn.net/de855122-0edb-4092-8adb-e02a48b0a2fd/playlist.m3u8",
     views: "157K",
     likes: "3K",
     shares: "3K",
@@ -65,7 +65,7 @@ const reelsData = [
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Reels/storytelling1.png?updatedAt=1774954365860",
     video:
-      "https://res.cloudinary.com/dnvldejvu/video/upload/v1777894226/storytelling1_fi8ry3.mp4",
+      "https://vz-963c42bb-849.b-cdn.net/6066bbe9-8aef-4403-9535-55b60434b942/playlist.m3u8",
     views: "214K",
     likes: "10K",
     shares: "4.7K",
@@ -79,7 +79,7 @@ const reelsData = [
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Reels/storytelling2.png?updatedAt=1774954366395",
     video:
-      "https://res.cloudinary.com/dnvldejvu/video/upload/v1777894219/storytelling2_qb8nxa.mp4",
+      "https://vz-963c42bb-849.b-cdn.net/828f2d3f-3896-4530-8ccc-82419e2aa61b/playlist.m3u8",
     views: "186K",
     likes: "2K",
     shares: "400",
@@ -93,7 +93,7 @@ const reelsData = [
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Reels/storytelling3.png?updatedAt=1774954365503",
     video:
-      "https://res.cloudinary.com/dnvldejvu/video/upload/v1777894217/storytelling3_zwhny8.mp4",
+      "https://vz-963c42bb-849.b-cdn.net/24b6b598-72e9-42c0-8f71-6ec150c4fd56/playlist.m3u8",
     views: "28K",
     likes: "600",
     shares: "170",
@@ -107,7 +107,7 @@ const reelsData = [
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Reels/storytelling4.jpg?updatedAt=1774954364103",
     video:
-      "https://res.cloudinary.com/dnvldejvu/video/upload/v1777894228/storytelling4_ireohi.mp4",
+      "https://vz-963c42bb-849.b-cdn.net/be7fba0e-f181-4557-9b03-ea44dc48ea03/playlist.m3u8",
     views: "123K",
     likes: "6K",
     shares: "700",

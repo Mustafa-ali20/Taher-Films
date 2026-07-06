@@ -19,7 +19,7 @@ function DisplayProjects() {
       id: 1,
       bgColor: "card-bg-2",
       video:
-        "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777894228/food2_v8czki.mp4",
+        "https://vz-963c42bb-849.b-cdn.net/77257f41-437e-4c16-89a2-31618f9db7b2/playlist.m3u8",
       creatorName: "akfoddvlogg",
       creatorProfile: "/images/testi/AK.jpg",
       rotation: 0.7,
@@ -46,7 +46,7 @@ function DisplayProjects() {
       id: 3,
       bgColor: "card-bg-3",
       video:
-        "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777902166/prosports_pnuodb.mp4",
+        "https://vz-963c42bb-849.b-cdn.net/4fc0717c-db67-4437-a7fe-6bc677ac4ddc/playlist.m3u8",
       creatorName: "prosportskw",
       creatorProfile: "/images/testi/prosports.jpg",
       rotation: 0.3,

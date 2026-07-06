@@ -28,7 +28,7 @@ function DisplayProjects() {
       id: 2,
       bgColor: "card-bg-1",
       video:
-        "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777979260/abdu_gqtrbk.mp4",
+        "https://vz-963c42bb-849.b-cdn.net/b4c11c1f-4c78-4bdf-b5a7-c8ad7c8ad7a3/playlist.m3u8",
       creatorName: "abdu.tayyib",
       creatorProfile: "/images/testi/Abdu.jpg",
       rotation: -0.4,

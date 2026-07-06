@@ -184,7 +184,7 @@ const contentMarketingData = [
     id: 18,
     category: "content_marketing",
     thumbnail: "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Reels/abdu.jpg?updatedAt=1774954363922",
-    video: "https://res.cloudinary.com/du62cpjs7/video/upload/v1774966693/abdu_ytdh2r.mp4", //
+    video: "https://vz-963c42bb-849.b-cdn.net/b4c11c1f-4c78-4bdf-b5a7-c8ad7c8ad7a3/playlist.m3u8",
     views: "3K",
     likes: "100",
     shares: "5",

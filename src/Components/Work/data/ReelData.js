@@ -123,7 +123,7 @@ const reelsData = [
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Content%20Marketing/cm17.png?updatedAt=1774954414603",
     video:
-      "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777894783/cm17_fmrywy.mp4",
+      "https://vz-963c42bb-849.b-cdn.net/7a3571f9-74cb-4f8c-8a46-14d5f030cf6e/playlist.m3u8",
     views: "17K",
     likes: "410",
     shares: "170",
@@ -151,7 +151,7 @@ const reelsData = [
     thumbnail:
       "https://ik.imagekit.io/mxmnzkbib/Taher%20Films/Images/Reels/pod5.jpg?updatedAt=1774954365117",
     video:
-      "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777979390/pod5_s96uh5.mp4",
+      "https://vz-963c42bb-849.b-cdn.net/a5cbe498-b1ba-4f48-ae7e-d5fc8bf48a7a/playlist.m3u8",
     views: "4K",
     likes: "360",
     shares: "13",

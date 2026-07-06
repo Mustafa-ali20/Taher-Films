@@ -37,7 +37,7 @@ function DisplayProjects() {
       id: 4,
       bgColor: "card-bg-4",
       video:
-        "https://res.cloudinary.com/dnvldejvu/video/upload/q_auto/f_auto/v1777979114/tf_oqwrr2.mp4",
+        "https://vz-963c42bb-849.b-cdn.net/17cd54ee-b3dc-4dd2-bdc7-c851da28365c/playlist.m3u8",
       creatorName: "hussainhk",
       creatorProfile: "/images/testi/hussain HK.jpg",
       rotation: 1,

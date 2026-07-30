@@ -19,7 +19,7 @@ function DisplayProjects() {
       id: 1,
       bgColor: "card-bg-2",
       video:
-        "https://vz-963c42bb-849.b-cdn.net/77257f41-437e-4c16-89a2-31618f9db7b2/playlist.m3u8",
+        "https://vz-3c4093e3-246.b-cdn.net/47742c2c-a8be-4c74-b850-244a221f8689/playlist.m3u8",
       creatorName: "akfoddvlogg",
       creatorProfile: "/images/testi/AK.jpg",
       rotation: 0.7,
@@ -28,7 +28,7 @@ function DisplayProjects() {
       id: 2,
       bgColor: "card-bg-1",
       video:
-        "https://vz-963c42bb-849.b-cdn.net/b4c11c1f-4c78-4bdf-b5a7-c8ad7c8ad7a3/playlist.m3u8",
+        "https://vz-3c4093e3-246.b-cdn.net/064b7d7b-bcc8-48d3-8b2d-29a6cbaf99fb/playlist.m3u8",
       creatorName: "abdu.tayyib",
       creatorProfile: "/images/testi/Abdu.jpg",
       rotation: -0.4,
@@ -37,7 +37,7 @@ function DisplayProjects() {
       id: 4,
       bgColor: "card-bg-4",
       video:
-        "https://vz-963c42bb-849.b-cdn.net/17cd54ee-b3dc-4dd2-bdc7-c851da28365c/playlist.m3u8",
+        "https://vz-3c4093e3-246.b-cdn.net/75ebb02d-dafd-4962-bfe5-50cc3b7e0e33/playlist.m3u8",
       creatorName: "hussainhk",
       creatorProfile: "/images/testi/hussain HK.jpg",
       rotation: 1,
@@ -46,7 +46,7 @@ function DisplayProjects() {
       id: 3,
       bgColor: "card-bg-3",
       video:
-        "https://vz-963c42bb-849.b-cdn.net/4fc0717c-db67-4437-a7fe-6bc677ac4ddc/playlist.m3u8",
+        "https://vz-3c4093e3-246.b-cdn.net/6e49d5fa-fb71-4094-a3db-616d3612866e/playlist.m3u8",
       creatorName: "prosportskw",
       creatorProfile: "/images/testi/prosports.jpg",
       rotation: 0.3,
